@@ -1,5 +1,5 @@
-[
-    {
+[ 
+    { 
         "id":"senhas-001",
         "level": 1,
         "type": "multiple-choice",
@@ -26,5 +26,35 @@
         ],
         "correctAnswer": 1,
         "points": 20
+    },
+    {
+        "id":"senhas-003",
+        "level": 3,
+        "type": "true-false",
+        "question": "Pergunta Teste 3",
+        "correctAnswer": true,
+        "points": 30
+    },
+    {
+        "id":"senhas-004",
+        "level": 4,
+        "type": "true-false",
+        "question": "Pergunta Teste 4",
+        "correctAnswer": false,
+        "points": 40
+    },
+    {
+        "id":"senhas-005",
+        "level": 5,
+        "type": "multiple-choice",
+        "question": "Pergunta Teste 5",
+        "options": [
+            "Opção 1",
+            "Opção 2",
+            "Opção 3",
+            "Opção 4"
+        ],
+        "correctAnswer": 2,
+        "points": 50
     }
 ]
