@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { connectDatabase } from "./config/database";
 import userRoutes from "./routes/userRoutes";
+import questionRoutes from "./routes/questionRoutes";
 
 const app = express();
 
@@ -11,6 +12,7 @@ const PORT = Number(process.env.PORT) || 3000;
 app.use(cors());
 app.use(express.json());
 app.use("/api/users", userRoutes);
+app.use("/api/questions", questionRoutes);
 
 app.get("/api", (_req, res) => {
   res.json({
