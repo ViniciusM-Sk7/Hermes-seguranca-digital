@@ -1,0 +1,60 @@
+[ 
+    { 
+        "id":"golpes-digitais-001",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Pergunta Teste",
+        "options": [
+            "Opção 1",
+            "Opção 2",
+            "Opção 3",
+            "Opção 4"
+        ],
+        "correctAnswer": 3,
+        "points": 10
+    },
+    {
+        "id":"golpes-digitais-002",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Pergunta Teste 2",
+        "options": [
+            "Opção 1",
+            "Opção 2",
+            "Opção 3",
+            "Opção 4"
+        ],
+        "correctAnswer": 1,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-003",
+        "level": 1,
+        "type": "true-false",
+        "question": "Pergunta Teste 3",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"golpes-digitais-004",
+        "level": 2,
+        "type": "true-false",
+        "question": "Pergunta Teste 4",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-005",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Pergunta Teste 5",
+        "options": [
+            "Opção 1",
+            "Opção 2",
+            "Opção 3",
+            "Opção 4"
+        ],
+        "correctAnswer": 2,
+        "points": 20
+    }
+]
