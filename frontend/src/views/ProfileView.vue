@@ -18,41 +18,28 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
+import { apiRequest } from "../services/api";
+
+const router = useRouter();
 
 const userId = ref("");
 const loading = ref(true);
 const errorMessage = ref("");
 
 async function loadProfile() {
-  const token = localStorage.getItem("token");
-
-  if (!token) {
-    errorMessage.value = "Usuário não autenticado.";
-    loading.value = false;
-    return;
-  }
-
   try {
-    const response = await fetch(
-      "http://localhost:3000/api/users/profile",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      errorMessage.value = data.message || "Erro ao carregar perfil.";
-      return;
-    }
+    const data = await apiRequest("/users/profile");
 
     userId.value = data.userId;
   } catch (error) {
     console.error(error);
-    errorMessage.value = "Não foi possível conectar ao servidor.";
+
+    if (error instanceof Error) {
+      errorMessage.value = error.message;
+    } else {
+      errorMessage.value = "Não foi possível conectar ao servidor.";
+    }
   } finally {
     loading.value = false;
   }
@@ -60,7 +47,7 @@ async function loadProfile() {
 
 function logout() {
   localStorage.removeItem("token");
-  window.location.href = "/login";
+  router.push("/login");
 }
 
 onMounted(loadProfile);
