@@ -3,58 +3,220 @@
         "id":"senhas-001",
         "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste",
+        "question": "Uma senha forte deve conter pelo menos quantos caracteres?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "Opção 8",
+            "Opção 12",
+            "Opção 14",
+            "Opção 16"
         ],
-        "correctAnswer": 3,
-        "points": 10
+        "correctAnswer": 4,
+        "points": 30
     },
     {
         "id":"senhas-002",
         "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste 2",
+        "question": "Qual das seguintes é uma característica de uma senha forte?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "O uso de palavras comuns",
+            "A inclusão de diferentes tipos de caracteres",
+            "Repetição de números sequenciais",
+            "Uso de informações pessoais, como datas de nascimento"
         ],
-        "correctAnswer": 1,
-        "points": 20
+        "correctAnswer": 2,
+        "points": 10
     },
     {
         "id":"senhas-003",
         "level": 1,
         "type": "true-false",
-        "question": "Pergunta Teste 3",
-        "correctAnswer": true,
+        "question": "É recomendável usar a mesma senha para várias contas online.",
+        "correctAnswer": false,
         "points": 10
     },
     {
         "id":"senhas-004",
-        "level": 2,
+        "level": 1,
         "type": "true-false",
-        "question": "Pergunta Teste 4",
-        "correctAnswer": false,
+        "question": "Alterar periodicamente suas senhas é uma prática de segurança recomendada.",
+        "correctAnswer": true,
         "points": 20
     },
     {
         "id":"senhas-005",
-        "level": 2,
+        "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste 5",
+        "question": "Qual das seguintes é uma característica de uma senha forte?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "A utilização somente de números",
+            "Trocar letras por números ou símbolos",
+            "O uso de carateres aleatórios e não relacionados",
+            "Letras em sequência do alfabeto"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"senhas-006",
+        "level": 1,
+        "type": "true-false",
+        "question": "A senha 'abc123' é considerada uma senha forte.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"senhas-007",
+        "level": 1,
+        "type": "true-false",
+        "question": "É recomendável usar a mesma senha para várias contas online.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"senhas-008",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes é uma prática recomendada para criar senhas fortes?",
+        "options": [
+            "Usar informações pessoais, como seu nome",
+            "Utilizar palavras comuns do dicionário",
+            "Combinar letras maiúsculas e minúsculas, números e símbolos",
+            "Repetir a mesma senha em várias contas"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"senhas-009",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes não é uma prática recomendada para criar senhas fortes?",
+        "options": [
+            "Usar informações pessoais, como nomes de animais de estimação",
+            "Aleatorização de caracteres",
+            "Combinar letras maiúsculas e minúsculas, números e símbolos",
+            "Utilizar 16 caracteres ou mais"
+        ],
+        "correctAnswer": 1,
+        "points": 20
+    },
+    {
+        "id":"senhas-010",
+        "level": 1,
+        "type": "true-false",
+        "question": "É recomendável usar a sua data de nascimento como parte da sua senha.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"senhas-011",
+        "level": 1,
+        "type": "true-false",
+        "question": "A senha 'senha' é considerada uma senha forte.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"senhas-012",
+        "level": 1,
+        "type": "true-false",
+        "question": "A senha '$3nh4' é considerada uma senha forte.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-013",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Por que a senha '123456' é considerada fraca?",
+        "options": [
+            "Utiliza números sequenciais",
+            "Possui poucos caracteres",
+            "É muito comum e fácil de adivinhar",
+            "Todas as anteriores"
+        ],
+        "correctAnswer": 4,
+        "points": 20
+    },
+    {
+        "id":"senhas-014",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes é uma prática recomendada para criar senhas fortes?",
+        "options": [
+            "Utilizar apenas letras minúsculas",
+            "Utilizar 16 caracteres ou mais",
+            "Reutilizar senhas antigas",
+            "Usar letras em ordem alfabética"
         ],
         "correctAnswer": 2,
+        "points": 10
+    },
+    {
+        "id":"senhas-015",
+        "level": 1,
+        "type": "true-false",
+        "question": "É recomendável compartilhar suas senhas com amigos ou familiares.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"senhas-016",
+        "level": 2,
+        "type": "true-false",
+        "question": "A senha 'P@ssw0rd!' é considerada uma senha forte.",
+        "correctAnswer": false,
         "points": 20
+    },
+    {
+        "id":"senhas-017",
+        "level": 2,
+        "type": "true-false",
+        "question": "Utilizar palavras em outros idiomas pode tornar uma senha mais forte.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-018",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes práticas é recomendada para manter suas senhas seguras?",
+        "options": [
+            "Anotar todas as suas senhas em um caderno",
+            "Usar a mesma senha para todas as contas",
+            "Utilizar um gerenciador de senhas confiável",
+            "Compartilhar suas senhas com amigos"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"senhas-019",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Todos são exemplos de porque '15091986' é uma senha fraca, exceto:",
+        "options": [
+            "É uma data de nascimento muito comum",
+            "Utilizar datas não é recomendado",
+            "A utilização somente de números",
+            "É muito curta"
+        ],
+        "correctAnswer": 1,
+        "points": 20
+    },
+    {
+        "id":"senhas-020",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes senhas pode ser considerada forte?",
+        "options": [
+            "Joaozinho123",
+            "ahnes",
+            "0123456789ABCDEF",
+            "Nenhuma delas pode ser considerada forte"
+        ],
+        "correctAnswer": 4,
+        "points": 10
     }
 ]
