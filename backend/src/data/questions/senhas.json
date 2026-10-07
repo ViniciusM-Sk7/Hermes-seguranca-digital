@@ -10,7 +10,7 @@
             "Opção 14",
             "Opção 16"
         ],
-        "correctAnswer": 4,
+        "correctAnswer": 3,
         "points": 30
     },
     {
@@ -24,7 +24,7 @@
             "Repetição de números sequenciais",
             "Uso de informações pessoais, como datas de nascimento"
         ],
-        "correctAnswer": 2,
+        "correctAnswer": 1,
         "points": 10
     },
     {
@@ -54,7 +54,7 @@
             "O uso de carateres aleatórios e não relacionados",
             "Letras em sequência do alfabeto"
         ],
-        "correctAnswer": 3,
+        "correctAnswer": 2,
         "points": 20
     },
     {
@@ -84,7 +84,7 @@
             "Combinar letras maiúsculas e minúsculas, números e símbolos",
             "Repetir a mesma senha em várias contas"
         ],
-        "correctAnswer": 3,
+        "correctAnswer": 2,
         "points": 20
     },
     {
@@ -98,7 +98,7 @@
             "Combinar letras maiúsculas e minúsculas, números e símbolos",
             "Utilizar 16 caracteres ou mais"
         ],
-        "correctAnswer": 1,
+        "correctAnswer": 0,
         "points": 20
     },
     {
@@ -136,7 +136,7 @@
             "É muito comum e fácil de adivinhar",
             "Todas as anteriores"
         ],
-        "correctAnswer": 4,
+        "correctAnswer": 3,
         "points": 20
     },
     {
@@ -150,7 +150,7 @@
             "Reutilizar senhas antigas",
             "Usar letras em ordem alfabética"
         ],
-        "correctAnswer": 2,
+        "correctAnswer": 1,
         "points": 10
     },
     {
@@ -188,7 +188,7 @@
             "Utilizar um gerenciador de senhas confiável",
             "Compartilhar suas senhas com amigos"
         ],
-        "correctAnswer": 3,
+        "correctAnswer": 2,
         "points": 20
     },
     {
@@ -202,7 +202,7 @@
             "A utilização somente de números",
             "É muito curta"
         ],
-        "correctAnswer": 1,
+        "correctAnswer": 0,
         "points": 20
     },
     {
@@ -216,7 +216,7 @@
             "0123456789ABCDEF",
             "Nenhuma delas pode ser considerada forte"
         ],
-        "correctAnswer": 4,
+        "correctAnswer": 3,
         "points": 10
     }
 ]

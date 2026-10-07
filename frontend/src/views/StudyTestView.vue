@@ -1,4 +1,3 @@
-```vue
 <template>
   <main>
     <h1>Teste de estudo</h1>
@@ -104,9 +103,14 @@ import {
   getAttempt
 } from "../services/api";
 
-const attempt = ref<any>(null);
+import type {
+  StudyAttempt,
+  AnswerResult
+} from "../types/study";
+
+const attempt = ref<StudyAttempt | null>(null);
+const result = ref<AnswerResult | null>(null);
 const route = useRoute();
-const result = ref<any>(null);
 
 const loading = ref(false);
 const answered = ref(false);
@@ -166,6 +170,10 @@ async function answer(
   errorMessage.value = "";
 
   try {
+      if (!attempt.value) {
+      return;
+    }
+
     result.value = await answerQuestion(
       attempt.value.attemptId,
       questionId,
@@ -190,6 +198,10 @@ async function answer(
 async function nextQuestion() {
   if (result.value?.completed) {
     try {
+        if (!attempt.value) {
+        return;
+      }
+
       const data = await getAttempt(
         attempt.value.attemptId
       );

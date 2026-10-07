@@ -1,3 +1,9 @@
+import type {
+  StudyAttempt,
+  AnswerResult,
+  AttemptDetails
+} from "../types/study";
+
 const API_URL = "http://localhost:3000/api";
 
 export async function apiRequest(
@@ -32,7 +38,7 @@ export async function startAttempt(
   path: string,
   level: number,
   amount: number
-) {
+): Promise<StudyAttempt> {
   return apiRequest(`/attempts/${path}/${level}/start`, {
     method: "POST",
     body: JSON.stringify({
@@ -45,7 +51,7 @@ export async function answerQuestion(
   attemptId: string,
   questionId: string,
   answer: unknown
-) {
+): Promise<AnswerResult> {
   return apiRequest(`/attempts/${attemptId}/answer`, {
     method: "POST",
     body: JSON.stringify({
@@ -55,6 +61,8 @@ export async function answerQuestion(
   });
 }
 
-export async function getAttempt(attemptId: string) {
+export async function getAttempt(
+  attemptId: string
+): Promise<AttemptDetails> {
   return apiRequest(`/attempts/${attemptId}`);
 }

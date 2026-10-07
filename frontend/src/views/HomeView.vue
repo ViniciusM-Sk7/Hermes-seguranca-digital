@@ -99,4 +99,4 @@ function startStudy(amount: number) {
   });
 }
 </script>
-```
+
