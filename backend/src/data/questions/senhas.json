@@ -218,5 +218,115 @@
         ],
         "correctAnswer": 3,
         "points": 10
+    },
+    {
+        "id":"senhas-021",
+        "level": 2,
+        "type": "true-false",
+        "question": "A senha 'Qwerty123!' é considerada uma senha forte.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"senhas-022",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "São características de uma senha fraca, exceto:",
+        "options": [
+            "Utilizar menos de 16 caracteres",
+            "Utilizar apenas letras minúsculas, maiúsculas e números",
+            "Ser diferente de senhas anteriores",
+            "Usar palavras comuns escritas de trás para frente"
+        ],
+        "correctAnswer": 2,
+        "points": 20
+    },
+    {
+        "id":"senhas-023",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual destes não é uma boa prática para cuidar da segurança das suas senhas?",
+        "options": [
+            "Utilizar um gerenciador de senhas confiável",
+            "Utilizar autenticação de dois fatores sempre que possível",
+            "Utilizar senhas diferentes para cada conta",
+            "Contar suas senhas para amigos e familiares"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"senhas-024",
+        "level": 2,
+        "type": "true-false",
+        "question": "Utilizar autenticação de dois fatores é uma prática recomendada para aumentar a segurança das suas contas.",
+        "correctAnswer": true,
+        "points": 30
+    },
+    {
+        "id":"senhas-025",
+        "level": 2,
+        "type": "true-false",
+        "question": "Geradores de senhas podem ajudar a criar senhas fortes e únicas.",
+        "correctAnswer": true,
+        "points": 30
+    },
+    {
+        "id":"senhas-026",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes opções representa uma boa maneira de guardar suas senhas de forma segura?",
+        "options": [
+            "Utilizar um gerenciador de senhas confiável",
+            "Contar suas senhas para amigos e familiares",
+            "Anotar em um papel e deixá-lo em um local visível",
+            "Armazenar senhas em um arquivo de texto não criptografado"
+        ],
+        "correctAnswer": 0,
+        "points": 20
+    },
+    {
+        "id":"senhas-027",
+        "level": 2,
+        "type": "true-false",
+        "question": "Copartilhar contas com outras pessoas é uma prática recomendada para manter a segurança das suas senhas.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-028",
+        "level": 2,
+        "type": "true-false",
+        "question": "Compartilhar senhas de contas de trabalho com colegas é uma prática segura.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-029",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes práticas é recomendada para manter suas senhas seguras?",
+        "options": [
+            "Manter senhas padrão de empresas e serviços",
+            "Não entrar em suas contas em computadores públicos ou compartilhados",
+            "Tatuar sua senha no braço",
+            "Entrar em uma conta conectada a uma rede Wi-Fi pública sem proteção"
+        ],
+        "correctAnswer": 1,
+        "points": 30
+    },
+    {
+        "id":"senhas-030",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "A senha '79r8wih#%&GA891u!*GA9ha' é considerada uma senha fraca porque:",
+        "options": [
+            "Utiliza a mesma sequencia de caracteres duas vezes mesmo que não siga um padrão",
+            "Possui mais letras do que números",
+            "Esta exposta publicamente nesta pergunta",
+            "Todas as anteriores"
+        ],
+        "correctAnswer": 2,
+        "points": 40
     }
 ]
