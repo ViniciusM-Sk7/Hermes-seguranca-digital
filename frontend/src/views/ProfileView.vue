@@ -9,8 +9,9 @@
     </p>
 
     <div v-if="userId">
-      <p>Usuário autenticado.</p>
-      <p>ID: {{ userId }}</p>
+      <p>Usuário: {{ userName }}</p>
+      <p>E-mail: {{ userEmail }}</p>
+      <p>Pontos totais: {{ userPoints }}</p>
     </div>
     <button @click="logout"> Sair </button>
   </main>
@@ -24,6 +25,9 @@ import { apiRequest } from "../services/api";
 const router = useRouter();
 
 const userId = ref("");
+const userName = ref("");
+const userEmail = ref("");
+const userPoints = ref(0);
 const loading = ref(true);
 const errorMessage = ref("");
 
@@ -31,7 +35,10 @@ async function loadProfile() {
   try {
     const data = await apiRequest("/users/profile");
 
-    userId.value = data.userId;
+    userId.value = data.user.id;
+    userName.value = data.user.name;
+    userEmail.value = data.user.email;
+    userPoints.value = data.user.points;
   } catch (error) {
     console.error(error);
 

@@ -3,6 +3,7 @@ import { getQuestionsByPath } from "../data/questionData";
 import { StudyAttempt } from "../models/StudyAttempt";
 import { authMiddleware } from "../middleware/authMiddleware";
 import { checkAnswer } from "../services/questionService";
+import { User } from "../models/User";
 
 const router = Router();
 
@@ -44,23 +45,94 @@ router.post("/:path/:level/start", authMiddleware, async (req, res) => {
     });
     }
 
-    const levelQuestions = questions.filter(
-      (question) => question.level === level
-    );
+      let selectedQuestions;
 
-    if (levelQuestions.length === 0) {
-      return res.status(404).json({
-        message: "Nenhuma questão encontrada para este nível."
-      });
+    if (level === 1) {
+      const levelQuestions = questions.filter(
+        (question) => question.level === 1
+      );
+
+      if (levelQuestions.length < 5) {
+        return res.status(400).json({
+          message: "O nível 1 precisa ter pelo menos 5 questões."
+        });
+      }
+
+      selectedQuestions = shuffle(levelQuestions).slice(0, 5);
     }
 
-    if (amount > levelQuestions.length) {
+    if (level === 2) {
+      const level2Questions = questions.filter(
+        (question) => question.level === 2
+      );
+
+      const level1Questions = questions.filter(
+        (question) => question.level === 1
+      );
+
+      if (level2Questions.length < 3 || level1Questions.length < 2) {
+        return res.status(400).json({
+          message: "Não há questões suficientes para montar o nível 2."
+        });
+      }
+
+      const newQuestions = shuffle(level2Questions).slice(0, 3);
+      const previousQuestions = shuffle(level1Questions).slice(0, 2);
+
+      selectedQuestions = [
+        ...newQuestions,
+        ...previousQuestions
+      ];
+    }
+
+    if (level === 3) {
+      const level3Questions = questions.filter(
+        (question) => question.level === 3
+      );
+
+      const level2Questions = questions.filter(
+        (question) => question.level === 2
+      );
+
+      const previousQuestions = questions.filter(
+        (question) => question.level === 1 || question.level === 2
+      );
+
+      if (
+        level3Questions.length < 3 ||
+        level2Questions.length < 1 ||
+        previousQuestions.length < 2
+      ) {
+        return res.status(400).json({
+          message: "Não há questões suficientes para montar o nível 3."
+        });
+      }
+
+      const newQuestions = shuffle(level3Questions).slice(0, 3);
+
+      const level2Question = shuffle(level2Questions)[0];
+
+      const remainingPreviousQuestions = previousQuestions.filter(
+        (question) => question.id !== level2Question.id
+      );
+
+      const anyPreviousQuestion =
+        shuffle(remainingPreviousQuestions)[0];
+
+      selectedQuestions = [
+        ...newQuestions,
+        level2Question,
+        anyPreviousQuestion
+      ];
+    }
+
+    if (!selectedQuestions || selectedQuestions.length !== 5) {
       return res.status(400).json({
-        message: `O nível possui apenas ${levelQuestions.length} questões disponíveis.`
+        message: "Não foi possível montar a atividade."
       });
     }
 
-    const selectedQuestions = shuffle(levelQuestions).slice(0, amount);
+    selectedQuestions = shuffle(selectedQuestions);
 
     const questionIds = selectedQuestions.map(
       (question) => question.id
@@ -161,9 +233,7 @@ router.post(
       }
 
       const question = questions.find(
-        (item) =>
-          item.id === questionId &&
-          item.level === attempt.level
+        (item) => item.id === questionId
       );
 
       if (!question) {
@@ -183,6 +253,17 @@ router.post(
       });
 
       attempt.score += points;
+
+      if (points > 0) {
+        await User.findByIdAndUpdate(
+          req.user!.userId,
+          {
+            $inc: {
+              points
+            }
+          }
+        );
+      }
 
       if (
         attempt.answeredQuestions.length ===

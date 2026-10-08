@@ -72,7 +72,7 @@ const availableAmounts = computed(() => {
     return [];
   }
 
-  return [1, 2];
+  return [5];
 });
 
 function selectPath(path: string) {
