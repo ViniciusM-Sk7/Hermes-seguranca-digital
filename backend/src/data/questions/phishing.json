@@ -37,7 +37,7 @@
     },
     {
         "id":"phishing-004",
-        "level": 2,
+        "level": 1,
         "type": "true-false",
         "question": "Uma mensagem de algum serviço financeiro pedindo para você clicar em um link e atualizar suas informações de conta é sempre confiável.",
         "correctAnswer": false,
@@ -45,7 +45,7 @@
     },
     {
         "id":"phishing-005",
-        "level": 2,
+        "level": 1,
         "type": "multiple-choice",
         "question": "Ao receber uma mensagem de um número desconhecido que diz ser um funcionário do banco solicitando informações pessoais, qual destas não é uma ação segura?",
         "options": [
@@ -59,9 +59,45 @@
     },
     {
         "id":"phishing-006",
-        "level": 2,
+        "level": 1,
         "type": "true-false",
         "question": "É seguro inserir informações ao ser redirecionado por um código QR exposto em local público",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"phishing-007",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Ao clicar em um link, você é redirecionado para um website com o login de uma rede social, qual destas é uma ação recomendável para determinar sua veracidade?",
+        "options": [
+            "Verificar se o endereço está correto",
+            "Identificar erros de ortografia",
+            "Entrar na rede social pelos meios oficias e comparar visualmente",
+            "Todas as anteriores"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"phishing-008",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Você recebe uma ligação de um número desconhecido, uma voz robótica diz ser o gerente do seu banco e pede as informação de sua conta. Qual destes não é uma ação recomedável?",
+        "options": [
+            "Desligar a ligação e bloquear o número",
+            "Passar as informações",
+            "Pesquisar na internet se o número já foi reportado como golpe por outras pessoas",
+            "Contatar meios oficiais do banco"
+        ],
+        "correctAnswer": 1,
+        "points": 20
+    },
+        {
+        "id":"phishing-008",
+        "level": 1,
+        "type": "true-false",
+        "question": "É seguro mandar suas informações pessoais para um número desconhecido que diz ser da polícia",
         "correctAnswer": false,
         "points": 20
     }
