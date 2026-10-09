@@ -3,58 +3,66 @@
         "id":"phishing-001",
         "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste",
+        "question": "Ao ser redirecionado para um site suspeito, qual é a ação mais segura a tomar?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "Fechar a aba imediatamente",
+            "Continuar navegando no site",
+            "Inserir suas credenciais para verificar a autenticidade",
+            "Favoritar o site para acessá-lo posteriormente"
         ],
-        "correctAnswer": 3,
+        "correctAnswer": 0,
         "points": 10
     },
     {
         "id":"phishing-002",
         "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste 2",
+        "question": "Você recebeu um e-mail de um remetente desconhecido solicitando informações pessoais. Qual é a ação mais apropriada?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "Resoponder ao e-mail fornecendo as informações solicitadas",
+            "Marcar o e-mail como spam e não fornecer nenhuma informação",
+            "Clicar em links suspeitos para verificar a autenticidade do remetente",
+            "Marcar o e-mail como importante e arquivá-lo para referência futura"
         ],
         "correctAnswer": 1,
-        "points": 20
+        "points": 10
     },
     {
         "id":"phishing-003",
         "level": 1,
         "type": "true-false",
-        "question": "Pergunta Teste 3",
-        "correctAnswer": true,
+        "question": "Ao receber um e-mail de um remetente desconhecido solicitando informações pessoais, é seguro fornecer essas informações se o e-mail parecer legítimo.",
+        "correctAnswer": false,
         "points": 10
     },
     {
         "id":"phishing-004",
         "level": 2,
         "type": "true-false",
-        "question": "Pergunta Teste 4",
+        "question": "Uma mensagem de algum serviço financeiro pedindo para você clicar em um link e atualizar suas informações de conta é sempre confiável.",
         "correctAnswer": false,
-        "points": 20
+        "points": 10
     },
     {
         "id":"phishing-005",
         "level": 2,
         "type": "multiple-choice",
-        "question": "Pergunta Teste 5",
+        "question": "Ao receber uma mensagem de um número desconhecido que diz ser um funcionário do banco solicitando informações pessoais, qual destas não é uma ação segura?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "Verificar a autenticidade por meios oficias",
+            "Bloquear o número",
+            "Fornecer as informações solicitadas",
+            "Pesquisar na internet se o número já foi reportado como golpe por outras pessoas"
         ],
         "correctAnswer": 2,
+        "points": 20
+    },
+    {
+        "id":"phishing-006",
+        "level": 2,
+        "type": "true-false",
+        "question": "É seguro inserir informações ao ser redirecionado por um código QR exposto em local público",
+        "correctAnswer": false,
         "points": 20
     }
 ]

@@ -328,5 +328,161 @@
         ],
         "correctAnswer": 2,
         "points": 40
+    },
+    {
+        "id":"senhas-031",
+        "level": 3,
+        "type": "true-false",
+        "question": "Utilizar senhas diferentes mas parecidas para diferentes contas é uma prática recomendada.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-032",
+        "level": 3,
+        "type": "true-false",
+        "question": "Deixar sua conta logada em um computador público não é uma prática segura.",
+        "correctAnswer": true,
+        "points": 30
+    },
+    {
+        "id":"senhas-033",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes é uma prática recomendada para utilizar senhas fortes?",
+        "options": [
+            "Manter senhas padrão de empresas e serviços",
+            "Criar senhas curtas e fáceis de lembrar",
+            "Compartihar acessos com colegas de trabalho",
+            "Habilitar autenticação de dois fatores sempre que possível"
+        ],
+        "correctAnswer": 3,
+        "points": 30
+    },
+    {
+        "id":"senhas-034",
+        "level": 3,
+        "type": "true-false",
+        "question": "Manter acesso a contas de trabalho em computadores públicos é uma prática segura.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-035",
+        "level": 3,
+        "type": "true-false",
+        "question": "Acessar suas contas em redes Wi-Fi públicas sem proteção é uma prática segura.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-036",
+        "level": 3,
+        "type": "true-false",
+        "question": "É uma prática segura verificar se o site que você está acessando é seguro antes de inserir suas credenciais.",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"senhas-037",
+        "level": 3,
+        "type": "true-false",
+        "question": "É seguro acessar suas contas em celulares de terceiros e não sair delas depois de usar.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"senhas-038",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes senhas pode ser considerada forte?",
+        "options": [
+            "0lb4P",
+            "Nenhuma delas pode ser considerada forte",
+            "@lm0nd3gA",
+            "Sen#aSegUr@123456"
+        ],
+        "correctAnswer": 1,
+        "points": 30
+    },
+    {
+        "id":"senhas-039",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes práticas é recomendada para manter suas senhas seguras?",
+        "options": [
+            "Entrar em uma conta conectada a uma rede Wi-Fi pública sem proteção",
+            "Manter sua senha escrita em um papel próximo ao computador",
+            "Usar autenticação de dois fatores sempre que possível",
+            "Utilizar letras na sequência do teclado para criar senhas"
+        ],
+        "correctAnswer": 2,
+        "points": 30
+    },
+    {
+        "id":"senhas-040",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Qual das seguintes senhas pode ser considerada forte?",
+        "options": [
+            "1234567890",
+            "SenhaForte123!",
+            "qwertyuiop",
+            "Nenhuma delas pode ser considerada forte"
+        ],
+        "correctAnswer": 3,
+        "points": 10
+    },
+    {
+        "id":"senhas-041",
+        "level": 3,
+        "type": "true-false",
+        "question": "É recomendável verificar se você está no site correto antes de inserir suas credenciais.",
+        "correctAnswer": true,
+        "points": 20
+    },
+    {
+        "id":"senhas-042",
+        "level": 3,
+        "type": "true-false",
+        "question": "Manter suas senhas salvas em um navegador é tão seguro quanto utilizar um gerenciador de senhas confiável.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"senhas-043",
+        "level": 3,
+        "type": "true-false",
+        "question": "Não é segura ter suas senhas anotadas papel na sua carteira ou bolsa.",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"senhas-044",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Para manter uma senha segura, é recomendável:",
+        "options": [
+            "Utilizar um gerenciador de senhas confiável",
+            "Não compartilhar suas senhas com ninguém",
+            "Atualizar suas senhas regularmente",
+            "Todas as anteriores"
+        ],
+        "correctAnswer": 3,
+        "points": 30
+    },
+    {
+        "id":"senhas-045",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Porque 'UmaSenhaMuitoForte123!' é considerada uma senha fraca?",
+        "options": [
+            "Utiliza palavras comuns e previsíveis",
+            "Possui poucos caracteres",
+            "Inclui mais letras do que números",
+            "Não é uma senha fraca, é considerada forte"
+        ],
+        "correctAnswer": 0,
+        "points": 10
     }
 ]
