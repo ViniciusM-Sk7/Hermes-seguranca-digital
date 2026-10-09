@@ -93,12 +93,84 @@
         "correctAnswer": 1,
         "points": 20
     },
-        {
-        "id":"phishing-008",
+    {
+        "id":"phishing-009",
         "level": 1,
         "type": "true-false",
-        "question": "É seguro mandar suas informações pessoais para um número desconhecido que diz ser da polícia",
+        "question": "É seguro mandar suas informações pessoais para um número desconhecido que diz ser do governo",
         "correctAnswer": false,
         "points": 20
+    },
+    {
+        "id":"phishing-010",
+        "level": 1,
+        "type": "true-false",
+        "question": "É recomendável verificar a origem de emails que pedem informações pessoais",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"phishing-011",
+        "level": 1,
+        "type": "true-false",
+        "question": "É seguro entrar em um website que parece real mas o endereço está diferente",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"phishing-012",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "É seguro mandar suas informações pessoais para um número desconhecido que diz ser da polícia",
+        "options":[
+            "Um programa que melhora a velocidade da internet.",
+            "Uma tentativa de enganar pessoas para obter dados ou induzi-las a realizar ações prejudiciais.",
+            "Um método de criar senhas seguras.",
+            "Uma ferramenta para bloquear anúncios."
+        ],
+        "correctAnswer": 1,
+        "points": 20
+    },
+    {
+        "id":"phishing-013",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Qual destas situações pode indicar uma tentativa de phishing?",
+        "options":[
+            "Uma mensagem que cria urgência e pede dados pessoais por um link.",
+            "Um aviso esperado dentro do aplicativo oficial.",
+            "Uma mensagem sem links ou solicitações.",
+            "Um e-mail que você mesmo enviou."
+        ],
+        "correctAnswer": 0,
+        "points": 10
+    },
+    {
+        "id":"phishing-014",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Você recebe um e-mail informando que sua conta será bloqueada em 10 minutos caso você não clique em um link. Qual é a atitude mais segura?",
+        "options":[
+            "Clicar no link imediatamente.",
+            "Responder ao e-mail para confirmar a informação.",
+            "Acessar o site oficial por conta própria para verificar a situação.",
+            "Encaminhar o e-mail para outras pessoas."
+        ],
+        "correctAnswer": 2,
+        "points": 10
+    },
+    {
+        "id":"phishing-015",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Uma mensagem contém o logotipo de um banco conhecido. Isso garante que ela seja verdadeira?",
+        "options":[
+            "Sim, pois somente o banco pode utilizar seu logotipo.",
+            "Sim, desde que a mensagem esteja bem escrita",
+            "Não, porque todos os e-mails de bancos são falsos.",
+            "Não, pois logotipos podem ser copiados por golpistas."
+        ],
+        "correctAnswer": 3,
+        "points": 10
     }
 ]
