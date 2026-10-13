@@ -172,5 +172,85 @@
         ],
         "correctAnswer": 3,
         "points": 10
+    },
+    {
+        "id":"phishing-016",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Você recebe uma mensagem de texto que diz ser da empresa de telefonia que usa mencionando que ocorreu um problema no sistema, ela diz que eles precisam de seus dados para conferir se tudo está correto. Qual destas ações é a mais recomendável a se tomar?",
+        "options":[
+            "Ignorar e bloquear o número",
+            "Imediatamente enviar os dados solicitados",
+            "Ligar para o número que enviou a mensagem",
+            "Enviar os dados de outra pessoa"
+        ],
+        "correctAnswer": 0,
+        "points": 10
+    },
+    {
+        "id":"phishing-017",
+        "level": 2,
+        "type": "true-false",
+        "question": "Uma mensagem com erros de português é sempre phishing, enquanto uma mensagem bem escrita é sempre confiável.",
+        "correctAnswer": false,
+        "points": 20
+    }, 
+    {
+        "id":"phishing-018",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Você recebe um e-mail inesperado com um arquivo anexado e a mensagem “Abra agora para evitar o cancelamento da sua conta”. Qual é a melhor atitude?",
+        "options":[
+            "Encaminhar o arquivo para um colega abrir",
+            "Abrir o arquivo rapidamente",
+            "Não abrir o anexo e verificar a solicitação por um canal oficial",
+            "Desativar o antivírus antes de abrir"
+        ],
+        "correctAnswer": 2,
+        "points": 20
+    },
+    {
+        "id":"phishing-019",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Você percebe que digitou sua senha em um site falso. Qual deve ser uma das primeiras medidas?",
+        "options":[
+            "Usar o mesmo link para tentar corrigir o erro",
+            "Alterar a senha pelo site ou aplicativo oficial e proteger outras contas que utilizem a mesma senha",
+            "Esperar para ver se algo acontece",
+            "Responder ao golpista pedindo que apague seus dados"
+        ],
+        "correctAnswer": 1,
+        "points": 30
+    },
+    {
+        "id":"phishing-020",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Você recebe uma mensagem de um número desconhecido dizendo ser um amigo seu que mudou de número, ele então compartilha com você um link, supostamente de uma postagem de rede social. Ao abrir o link, você se depara com uma tela de login de tal rede social. Todas são ações recomendáveis, exceto:",
+        "options":[
+            "Entrar normalmente, já que é um amigo meu e confio nele",
+            "Entrar em contato pelo número antigo para verificar se realmente é ele",
+            "Verificar a página por sinais de que seja falsa",
+            "Comparar o link enviado com um link real da rede social"
+        ],
+        "correctAnswer": 0,
+        "points": 20
+    },
+    {
+        "id":"phishing-021",
+        "level": 2,
+        "type": "true-false",
+        "question": "Se alguém em quem você confia lhe envia um link, você não tem nenhum motivo para não colocar sua informações",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"phishing-022",
+        "level": 2,
+        "type": "true-false",
+        "question": "",
+        "correctAnswer": false,
+        "points": 10
     }
 ]
