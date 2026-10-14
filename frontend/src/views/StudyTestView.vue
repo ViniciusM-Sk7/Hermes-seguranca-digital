@@ -33,7 +33,7 @@
           @click="answer(currentQuestion.id, index)"
           :disabled="answered"
         >
-          {{ index }} - {{ option }}
+          {{ String.fromCharCode(65 + index)+ ')' }} {{ option }}
         </button>
       </div>
 

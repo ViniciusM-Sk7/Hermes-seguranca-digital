@@ -2,11 +2,21 @@
   <main class="home-page">
     <header class="topbar">
       <a class="brand" href="/">
-        <span class="brand-icon">S</span>
-        <span>Segurança Digital</span>
+        <span class="brand-icon">H</span>
+        <span>Hermes</span>
       </a>
 
-      <span class="topbar-label">Aprenda no seu ritmo</span>
+      <div class="topbar-actions">
+        <span class="topbar-label">Aprenda no seu ritmo</span>
+
+        <RouterLink to="/profile" class="header-link">
+          Meu perfil
+        </RouterLink>
+
+        <button class="logout-button" @click="logout">
+          Sair
+        </button>
+      </div>
     </header>
 
     <section class="welcome">
@@ -107,7 +117,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { useRouter } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 
 const router = useRouter();
 
@@ -162,4 +172,64 @@ function startStudy(amount: number) {
     }
   });
 }
+
+function logout() {
+  localStorage.removeItem("token");
+  router.push("/");
+}
 </script>
+
+<style>
+
+.home-page .topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.home-page .header-link {
+  padding: 9px 14px;
+  border: 1px solid #ded8cf;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #51463d;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.home-page .header-link:hover {
+  background: #e8e1d8;
+}
+
+.home-page .logout-button {
+  padding: 9px 14px;
+  border: 1px solid #51463d;
+  border-radius: 8px;
+  background: #b52714;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.home-page .logout-button:hover {
+  background: #de2710;
+}
+
+@media (max-width: 600px) {
+  .home-page .topbar {
+    align-items: flex-start;
+  }
+
+  .home-page .topbar-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .home-page .topbar-label {
+    display: none;
+  }
+}
+
+</style>

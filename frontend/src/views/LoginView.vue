@@ -2,8 +2,8 @@
   <main class="login-page">
     <header class="login-header">
       <RouterLink to="/" class="brand">
-        <span class="brand-icon">S</span>
-        <span>Segurança Digital</span>
+        <span class="brand-icon">H</span>
+        <span>Hermes</span>
       </RouterLink>
     </header>
 
