@@ -120,15 +120,9 @@
     {
         "id":"phishing-012",
         "level": 1,
-        "type": "multiple-choice",
+        "type": "true-false",
         "question": "É seguro mandar suas informações pessoais para um número desconhecido que diz ser da polícia",
-        "options":[
-            "Um programa que melhora a velocidade da internet.",
-            "Uma tentativa de enganar pessoas para obter dados ou induzi-las a realizar ações prejudiciais.",
-            "Um método de criar senhas seguras.",
-            "Uma ferramenta para bloquear anúncios."
-        ],
-        "correctAnswer": 1,
+        "correctAnswer": false,
         "points": 20
     },
     {
