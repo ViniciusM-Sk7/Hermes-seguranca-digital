@@ -1,5 +1,15 @@
 <template>
-  <main>
+  <main class="game-page">
+    <header class="topbar">
+      <RouterLink to="/home" class="brand">
+        <span class="brand-icon">H</span>
+        <span>Hermes</span>
+      </RouterLink>
+
+      <RouterLink to="/home" class="back-link">
+        Voltar
+      </RouterLink>
+    </header>
     <h1>Teste de estudo</h1>
 
     <button
@@ -24,6 +34,8 @@
 
       <hr />
 
+      <section class="game-card">
+
       <h2>{{ currentQuestion.question }}</h2>
 
       <div v-if="currentQuestion.options">
@@ -32,8 +44,12 @@
           :key="index"
           @click="answer(currentQuestion.id, index)"
           :disabled="answered"
+          :class="{
+            correct: answered && result?.correct && selectedAnswer === index,
+            incorrect: answered && result && !result.correct && selectedAnswer === index
+          }"
         >
-          {{ String.fromCharCode(65 + index)+ ')' }} {{ option }}
+          {{ String.fromCharCode(65 + index) + ')' }} {{ option }}
         </button>
       </div>
 
@@ -41,6 +57,10 @@
         <button
           @click="answer(currentQuestion.id, true)"
           :disabled="answered"
+          :class="{
+            correct: answered && result?.correct && selectedAnswer === true,
+            incorrect: answered && result && !result.correct && selectedAnswer === true
+          }"
         >
           Verdadeiro
         </button>
@@ -48,10 +68,16 @@
         <button
           @click="answer(currentQuestion.id, false)"
           :disabled="answered"
+          :class="{
+            correct: answered && result?.correct && selectedAnswer === false,
+            incorrect: answered && result && !result.correct && selectedAnswer === false
+          }"
         >
           Falso
         </button>
       </div>
+
+      </section>
 
       <div v-if="result">
         <hr />
@@ -73,7 +99,10 @@
           {{ result.completed ? "Finalizar" : "Próxima questão" }}
         </button>
       </div>
+  
+
     </div>
+    
 
     <div v-if="finished">
       <h2>Tentativa concluída!</h2>
@@ -123,6 +152,8 @@ const finished = ref(false);
 const finalScore = ref(0);
 const answeredCount = ref(0);
 
+const selectedAnswer = ref<unknown>(null);
+
 const currentQuestion = computed(() => {
   if (!attempt.value) {
     return null;
@@ -165,26 +196,27 @@ async function start() {
 
 async function answer(
   questionId: string,
-  selectedAnswer: unknown
+  answerValue: unknown
 ) {
+  if (answered.value || !attempt.value) {
+    return;
+  }
+
   errorMessage.value = "";
+  selectedAnswer.value = answerValue;
 
   try {
-      if (!attempt.value) {
-      return;
-    }
-
     result.value = await answerQuestion(
       attempt.value.attemptId,
       questionId,
-      selectedAnswer
+      answerValue
     );
 
     answered.value = true;
     score.value = result.value.score;
     answeredCount.value++;
-
   } catch (error) {
+    selectedAnswer.value = null;
     console.error(error);
 
     if (error instanceof Error) {
@@ -239,3 +271,129 @@ function reset() {
   errorMessage.value = "";
 }
 </script>
+
+<style scoped>
+.game-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f3f0eb;
+  color: #302d29;
+}
+
+.topbar {
+  min-height: 76px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #ded8cf;
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #51463d;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #51463d;
+  color: white;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.back-link {
+  color: #51463d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.game-content {
+  width: min(100% - 40px, 760px);
+  margin: 0 auto;
+  padding: 48px 0 64px;
+  flex: 1;
+}
+
+.page-heading {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #77716a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.page-heading h1 {
+  margin: 6px 0;
+  font-size: clamp(30px, 5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.page-heading p {
+  color: #77716a;
+  font-size: 15px;
+}
+
+.game-card {
+  border: 1px solid #ded8cf;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.game-card button {
+  padding: 12px 18px;
+  border: 2px solid #ded8cf;
+  border-radius: 10px;
+  background-color: #f3f0eb;
+  color: #302d29;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.game-card button:hover:not(:disabled) {
+  background-color: #e5ded4;
+}
+
+.game-card button.correct {
+  background-color: #d1fae0;
+  border-color: #22a05a;
+  color: #166534;
+}
+
+.game-card button.incorrect {
+  background-color: #fee2e2;
+  border-color: #dc2626;
+  color: #991b1b;
+}
+
+.game-card button:disabled {
+  cursor: default;
+}
+
+</style>

@@ -1,7 +1,7 @@
 <template>
   <main class="home-page">
     <header class="topbar">
-      <a class="brand" href="/">
+      <a class="brand" href="/home">
         <span class="brand-icon">H</span>
         <span>Hermes</span>
       </a>

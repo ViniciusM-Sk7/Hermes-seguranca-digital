@@ -1,3 +1,4 @@
+
 import { Router } from "express";
 import { createUser, loginUser } from "../controllers/userController";
 import { authMiddleware } from "../middleware/authMiddleware";
@@ -11,7 +12,7 @@ router.post("/login", loginUser);
 router.get("/profile", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user!.userId).select(
-      "name email points"
+      "name email points progress"
     );
 
     if (!user) {
@@ -25,7 +26,12 @@ router.get("/profile", authMiddleware, async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
-        points: user.points
+        points: user.points,
+        progress: {
+          senhas: user.progress?.senhas ?? 1,
+          phishing: user.progress?.phishing ?? 1,
+          golpesDigitais: user.progress?.golpesDigitais ?? 1
+        }
       }
     });
   } catch (error) {
