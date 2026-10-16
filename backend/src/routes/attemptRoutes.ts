@@ -7,6 +7,18 @@ import { User } from "../models/User";
 
 const router = Router();
 
+type ProgressKey = "senhas" | "phishing" | "golpesDigitais";
+
+function getProgressKey(path: string): ProgressKey | null {
+  const paths: Record<string, ProgressKey> = {
+    senhas: "senhas",
+    phishing: "phishing",
+    "golpes-digitais": "golpesDigitais"
+  };
+
+  return paths[path] ?? null;
+}
+
 function shuffle<T>(array: T[]): T[] {
   const copy = [...array];
 
@@ -38,6 +50,30 @@ router.post("/:path/:level/start", authMiddleware, async (req, res) => {
     }
 
     const questions = getQuestionsByPath(path);
+
+    const progressKey = getProgressKey(path);
+
+    if (!progressKey) {
+      return res.status(400).json({
+        message: "Caminho de estudo inválido."
+      });
+    }
+
+    const user = await User.findById(req.user!.userId).select("progress");
+
+    if (!user) {
+      return res.status(404).json({
+        message: "Usuário não encontrado."
+      });
+    }
+
+    const currentLevel = user.progress?.[progressKey] ?? 1;
+
+    if (level > currentLevel || level > 3) {
+      return res.status(403).json({
+        message: "Você ainda não desbloqueou este nível."
+      });
+    }
 
     if (!questions) {
     return res.status(404).json({
@@ -266,11 +302,40 @@ router.post(
       }
 
       if (
-        attempt.answeredQuestions.length ===
-        attempt.questionIds.length
-      ) {
-        attempt.completed = true;
+      attempt.answeredQuestions.length ===
+      attempt.questionIds.length
+    ) {
+      attempt.completed = true;
+
+      const correctAnswers = attempt.answeredQuestions.filter(
+        (item) => item.correct
+      ).length;
+
+      if (correctAnswers >= 4 && attempt.level < 3) {
+        const progressKey = getProgressKey(attempt.path);
+
+        if (progressKey) {
+          const user = await User.findById(req.user!.userId).select(
+            "progress"
+          );
+
+          if (user) {
+            const currentLevel = user.progress?.[progressKey] ?? 1;
+
+            if (attempt.level === currentLevel) {
+              await User.findByIdAndUpdate(
+                req.user!.userId,
+                {
+                  $set: {
+                    [`progress.${progressKey}`]: attempt.level + 1
+                  }
+                }
+              );
+            }
+          }
+        }
       }
+    }
 
       await attempt.save();
 

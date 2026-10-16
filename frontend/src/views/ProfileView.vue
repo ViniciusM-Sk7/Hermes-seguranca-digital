@@ -54,12 +54,12 @@
 
           <article class="stat-card">
             <div class="stat-icon">✓</div>
-            <p class="stat-label">Atividades concluídas</p>
+            <p class="stat-label">Etapas concluídas</p>
             <strong class="stat-value">
-              {{ completedActivities }}
+              {{ completedStages }}
             </strong>
             <span class="stat-description">
-              Atividades finalizadas
+              Finalizadas
             </span>
           </article>
         </section>
@@ -93,7 +93,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import { apiRequest } from "../services/api";
 
@@ -103,9 +103,10 @@ const userId = ref("");
 const userName = ref("");
 const userEmail = ref("");
 const userPoints = ref(0);
-const completedActivities = ref(0);
 const loading = ref(true);
 const errorMessage = ref("");
+
+const completedStages = ref(0);
 
 async function loadProfile() {
   loading.value = true;
@@ -119,7 +120,14 @@ async function loadProfile() {
     userEmail.value = data.user.email;
     userPoints.value = data.user.points;
 
-    completedActivities.value = data.completedActivities ?? 0;
+
+    const progress = data.user.progress;
+
+    completedStages.value =
+      Math.max(0, (progress?.senhas ?? 1) - 1) +
+      Math.max(0, (progress?.phishing ?? 1) - 1) +
+      Math.max(0, (progress?.golpesDigitais ?? 1) - 1);
+
   } catch (error) {
     console.error(error);
 
