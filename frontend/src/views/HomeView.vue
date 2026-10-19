@@ -9,6 +9,10 @@
       <div class="topbar-actions">
         <span class="topbar-label">Aprenda no seu ritmo</span>
 
+        <button class="tutorial-link" @click="openTutorial">
+          Ver tutorial
+        </button>
+
         <RouterLink to="/profile" class="header-link">
           Meu perfil
         </RouterLink>
@@ -43,6 +47,7 @@
           :key="path.id"
           class="path-card"
           :class="{ selected: selectedPath === path.id }"
+          :disabled="loading"
           @click="selectPath(path.id)"
         >
           <span class="path-icon">
@@ -70,61 +75,83 @@
     </section>
 
     <section v-if="selectedPath" class="selection-section">
-      <span class="eyebrow">PRÓXIMA ETAPA</span>
-      <h2>Escolha seu nível</h2>
-      <p>Selecione o nível que deseja estudar.</p>
+      <span class="eyebrow">SUA PRÓXIMA ETAPA</span>
 
-      <div class="choice-list">
+      <h2>
+        {{ selectedPathName }}
+      </h2>
+
+      <p v-if="loading">
+        Consultando seu progresso...
+      </p>
+
+      <template v-else-if="!error">
+        <p v-if="currentLevel < 3">
+          Você está no nível {{ currentLevel }}.
+          Continue aprendendo para desbloquear o próximo nível.
+        </p>
+
+        <p v-else>
+          Você chegou ao último nível deste caminho!
+          Você pode refazer a atividade para praticar.
+        </p>
+
         <button
-          v-for="level in levels"
-          :key="level"
-          class="choice-button"
-          :class="{ selected: selectedLevel === level }"
-          @click="selectLevel(level)"
-        >
-          <span class="choice-number">0{{ level }}</span>
-          <span>Nível {{ level }}</span>
-          <span class="choice-arrow">
-            {{ selectedLevel === level ? "✓" : "→" }}
-          </span>
-        </button>
-      </div>
-    </section>
-
-    <section v-if="selectedLevel" class="selection-section amount-section">
-      <span class="eyebrow">PRONTO PARA COMEÇAR?</span>
-      <h2>Hora de praticar</h2>
-      <p>Responda às questões do caminho escolhido.</p>
-
-      <div class="choice-list">
-        <button
-          v-for="amount in availableAmounts"
-          :key="amount"
           class="start-button"
-          @click="startStudy(amount)"
+          :disabled="loading"
+          @click="startStudy"
         >
-          Começar atividade
-          <span>{{ amount }} questões&nbsp; →</span>
+          <span>
+            {{ currentLevel === 3 ? "Refazer nível 3" : "Começar atividade" }}
+          </span>
+          <span>5 questões&nbsp; →</span>
         </button>
-      </div>
+      </template>
+
+      <p v-if="error" class="error-message">
+        {{ error }}
+      </p>
     </section>
 
     <footer class="home-footer">
       <span>Conhecimento é uma forma de proteção.</span>
     </footer>
+
+    <WelcomeTutorial
+        v-if="showTutorial"
+        @close="closeTutorial"
+      />
   </main>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 import { RouterLink, useRouter } from "vue-router";
+import { apiRequest } from "../services/api";
+import WelcomeTutorial from "../components/WelcomeTutorial.vue";
+
+type PathId = "senhas" | "phishing" | "golpes-digitais";
+
+interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+  points: number;
+  progress: {
+    senhas: number;
+    phishing: number;
+    golpesDigitais: number;
+  };
+}
 
 const router = useRouter();
 
-const selectedPath = ref("");
-const selectedLevel = ref<number | null>(null);
+const selectedPath = ref<PathId | "">("");
+const currentLevel = ref(1);
+const loading = ref(false);
+const error = ref("");
 
-const paths = [
+const paths: { id: PathId; name: string }[] = [
   {
     id: "senhas",
     name: "Senhas"
@@ -139,27 +166,40 @@ const paths = [
   }
 ];
 
-const levels = [1, 2, 3];
-
-const availableAmounts = computed(() => {
-  if (!selectedPath.value || selectedLevel.value === null) {
-    return [];
-  }
-
-  return [5];
+const selectedPathName = computed(() => {
+  return paths.find((path) => path.id === selectedPath.value)?.name ?? "";
 });
 
-function selectPath(path: string) {
+async function selectPath(path: PathId) {
   selectedPath.value = path;
-  selectedLevel.value = null;
+  loading.value = true;
+  error.value = "";
+
+  try {
+    const response = await apiRequest("/users/profile");
+    const profile = response.user as UserProfile;
+
+    const progressKey: Record<PathId, keyof UserProfile["progress"]> = {
+      senhas: "senhas",
+      phishing: "phishing",
+      "golpes-digitais": "golpesDigitais"
+    };
+
+    const level = profile.progress?.[progressKey[path]] ?? 1;
+
+    currentLevel.value = Math.min(3, Math.max(1, level));
+  } catch (err) {
+    error.value =
+      err instanceof Error
+        ? err.message
+        : "Não foi possível consultar seu progresso.";
+  } finally {
+    loading.value = false;
+  }
 }
 
-function selectLevel(level: number) {
-  selectedLevel.value = level;
-}
-
-function startStudy(amount: number) {
-  if (!selectedPath.value || selectedLevel.value === null) {
+function startStudy() {
+  if (!selectedPath.value || loading.value || error.value) {
     return;
   }
 
@@ -167,8 +207,8 @@ function startStudy(amount: number) {
     path: "/study-test",
     query: {
       path: selectedPath.value,
-      level: String(selectedLevel.value),
-      amount: String(amount)
+      level: String(currentLevel.value),
+      amount: "5"
     }
   });
 }
@@ -176,6 +216,25 @@ function startStudy(amount: number) {
 function logout() {
   localStorage.removeItem("token");
   router.push("/");
+}
+
+const showTutorial = ref(false);
+
+const TUTORIAL_STORAGE_KEY = "hermes-tutorial-seen";
+
+onMounted(() => {
+  if (localStorage.getItem(TUTORIAL_STORAGE_KEY) !== "true") {
+    showTutorial.value = true;
+  }
+});
+
+function openTutorial() {
+  showTutorial.value = true;
+}
+
+function closeTutorial() {
+  localStorage.setItem(TUTORIAL_STORAGE_KEY, "true");
+  showTutorial.value = false;
 }
 </script>
 
@@ -232,4 +291,18 @@ function logout() {
   }
 }
 
+.home-page .tutorial-link {
+  padding: 9px 14px;
+  border: 1px solid #ded8cf;
+  border-radius: 8px;
+  background: #fffdf9;
+  color: #51463d;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.home-page .tutorial-link:hover {
+  background: #e8e1d8;
+}
 </style>

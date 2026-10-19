@@ -31,6 +31,9 @@
       <p>
         Questão {{ currentIndex + 1 }} / {{ attempt.questions.length }}
       </p>
+      <p class="correct-counter">
+        Acertos: {{ correctCount }} / {{ answeredCount }}
+      </p>
       <p>Pontuação: {{ score }}</p>
       <hr />
 
@@ -47,8 +50,17 @@
               @click="answer(currentQuestion.id, index)"
               :disabled="answered"
               :class="{
-                correct: answered && result?.correct && selectedAnswer === index,
-                incorrect: answered && result && !result.correct && selectedAnswer === index
+                correct:
+                  answered &&
+                  (
+                    (result?.correct && selectedAnswer === index) ||
+                    (!result?.correct && result?.correctAnswer === index)
+                  ),
+                incorrect:
+                  answered &&
+                  result !== null &&
+                  !result.correct &&
+                  selectedAnswer === index
               }"
             >
               {{ String.fromCharCode(65 + index) + ')' }} {{ option }}
@@ -60,8 +72,14 @@
               @click="answer(currentQuestion.id, true)"
               :disabled="answered"
               :class="{
-                correct: answered && result?.correct && selectedAnswer === true,
-                incorrect: answered && result && !result.correct && selectedAnswer === true
+                correct:
+                  answered &&
+                  result?.correctAnswer === true,
+                incorrect:
+                  answered &&
+                  result !== null &&
+                  !result.correct &&
+                  selectedAnswer === true
               }"
             >
               Verdadeiro
@@ -71,8 +89,14 @@
               @click="answer(currentQuestion.id, false)"
               :disabled="answered"
               :class="{
-                correct: answered && result?.correct && selectedAnswer === false,
-                incorrect: answered && result && !result.correct && selectedAnswer === false
+                correct:
+                  answered &&
+                  result?.correctAnswer === false,
+                incorrect:
+                  answered &&
+                  result !== null &&
+                  !result.correct &&
+                  selectedAnswer === false
               }"
             >
               Falso
@@ -118,22 +142,71 @@
 
       </div>  
 
-      </div>
+      </div> 
       
-      <div v-if="finished" class="game-card">
-        <h2>Tentativa concluída!</h2>
+      <div v-if="finished && attempt" class="result-card">
+        <div
+          class="result-header"
+          :class="correctCount >= 4 ? 'result-success' : 'result-error'"
+        >
+          <span class="result-icon">
+            {{ correctCount >= 4 ? '✓' : '!' }}
+          </span>
 
-        <p>
-          Pontuação final: {{ finalScore }}
-        </p>
+          <div>
+            <h2>Atividade concluída!</h2>
+            <p>
+              {{
+                correctCount >= 4
+                  ? attempt.level < 3
+                    ? "Parabéns! Você atingiu o resultado necessário para avançar."
+                    : "Excelente! Você concluiu o último nível deste caminho."
+                  : "Você pode tentar novamente para melhorar seu resultado."
+              }}
+            </p>
+          </div>
+        </div>
 
-        <p>
-          Questões respondidas: {{ answeredCount }}
-        </p>
+        <div class="result-stats">
+          <div class="result-stat">
+            <span class="stat-label">Pontuação final</span>
+            <strong>{{ finalScore }} pontos</strong>
+          </div>
 
-        <button @click="reset">
-          Nova tentativa
+          <div class="result-stat">
+            <span class="stat-label">Questões corretas</span>
+            <strong>{{ correctCount }} de {{ answeredCount }}</strong>
+          </div>
+
+          <div class="result-stat">
+            <span class="stat-label">Questões incorretas</span>
+            <strong>{{ answeredCount - correctCount }}</strong>
+          </div>
+
+          <div class="result-stat">
+            <span class="stat-label">Aproveitamento</span>
+            <strong>
+              {{
+                answeredCount > 0
+                  ? Math.round((correctCount / answeredCount) * 100)
+                  : 0
+              }}%
+            </strong>
+          </div>
+        </div>
+
+        <button class="next-button" @click="reset">
+          Fazer outra tentativa
+          <span aria-hidden="true">→</span>
         </button>
+
+        <RouterLink
+          to="/home"
+          class="back-link"
+          style="display: block; text-align: center; margin-top: 16px;"
+        >
+          Voltar aos estudos
+        </RouterLink>
       </div>
 
       <footer class="footer">
@@ -160,19 +233,16 @@
   const attempt = ref<StudyAttempt | null>(null);
   const result = ref<AnswerResult | null>(null);
   const route = useRoute();
-
   const loading = ref(false);
   const answered = ref(false);
   const errorMessage = ref("");
-
   const currentIndex = ref(0);
   const score = ref(0);
   const finished = ref(false);
-
   const finalScore = ref(0);
   const answeredCount = ref(0);
-
   const selectedAnswer = ref<unknown>(null);
+  const correctCount = ref(0);
 
   const currentQuestion = computed(() => {
     if (!attempt.value) {
@@ -194,6 +264,7 @@
     finished.value = false;
     finalScore.value = 0;
     answeredCount.value = 0;
+    correctCount.value = 0;
 
     try {
       const path = String(route.query.path);
@@ -232,6 +303,10 @@
         answerValue
       );
 
+      if (result.value.correct) {
+        correctCount.value++;
+      }
+
       answered.value = true;
       score.value = result.value.score;
       answeredCount.value++;
@@ -260,6 +335,11 @@
 
         finalScore.value = data.score;
         answeredCount.value = data.answeredQuestions.length;
+
+        correctCount.value = data.answeredQuestions.filter(
+          (item) => item.correct
+        ).length;
+
         finished.value = true;
       } catch (error) {
         console.error(error);
@@ -288,6 +368,8 @@
     finished.value = false;
     finalScore.value = 0;
     answeredCount.value = 0;
+    correctCount.value = 0;
+    selectedAnswer.value = null;
     errorMessage.value = "";
   }
   </script>

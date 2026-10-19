@@ -46,10 +46,6 @@ router.get("/:path/:level", (req, res) => {
     });
   }
 
-  /*
-   * Se amount não for informado, retornamos apenas
-   * a quantidade disponível no nível.
-   */
   if (amount === undefined || Number.isNaN(amount)) {
     return res.status(200).json({
       path,

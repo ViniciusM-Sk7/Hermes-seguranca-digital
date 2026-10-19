@@ -21,6 +21,7 @@ export interface StudyAttempt {
 
 export interface AnswerResult {
   correct: boolean;
+  correctAnswer?: number | boolean;
   points: number;
   score: number;
   completed: boolean;

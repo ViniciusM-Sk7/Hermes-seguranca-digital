@@ -5,10 +5,10 @@
         "type": "multiple-choice",
         "question": "Uma senha forte deve conter pelo menos quantos caracteres?",
         "options": [
-            "Opção 8",
-            "Opção 12",
-            "Opção 14",
-            "Opção 16"
+            "Oito",
+            "Doze",
+            "Quatorze",
+            "Desesseis"
         ],
         "correctAnswer": 3,
         "points": 30
