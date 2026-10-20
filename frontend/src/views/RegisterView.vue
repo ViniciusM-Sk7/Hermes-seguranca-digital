@@ -1,9 +1,13 @@
 <template>
   <main class="register-page">
-    <header class="register-header">
+    <header class="topbar">
       <RouterLink to="/" class="brand">
         <span class="brand-icon">H</span>
         <span>Hermes</span>
+      </RouterLink>
+
+      <RouterLink to="/" class="back-link">
+        Voltar
       </RouterLink>
     </header>
 
@@ -62,8 +66,17 @@
         </p>
       </form>
 
+      <p class="login-prompt">
+          Já tem uma conta?
+          <RouterLink to="/login">Entre aqui</RouterLink>
+        </p>
+
       </div>
     </section>
+
+    <footer class="footer">
+        <p>{{ new Date().getFullYear() }} Hermes. Aprenda a navegar na internet com mais segurança.</p>
+    </footer>
   </main>
 </template>
 
@@ -94,7 +107,17 @@ async function register() {
       })
     });
 
-    await router.push("/login");
+    const data = await apiRequest("/users/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value
+      })
+    });
+
+    localStorage.setItem("token", data.token);
+
+    await router.push("/home");
   } catch (error) {
     console.error(error);
 
@@ -116,12 +139,15 @@ async function register() {
   color: #302d29;
 }
 
-.register-header {
-  width: 100%;
-  padding: 26px 7%;
+.topbar {
+  min-height: 76px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid #ded8cf;
+  background: #fff;
 }
-
 .brand {
   display: inline-flex;
   align-items: center;
@@ -275,5 +301,52 @@ input:focus {
   h1 {
     font-size: 25px;
   }
+}
+
+.login-prompt {
+  margin-top: 28px;
+  color: #77716a;
+  text-align: center;
+  font-size: 13px;
+}
+
+.login-prompt a {
+  color: #51463d;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 24px 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border-top: 1px solid #ded8cf;
+    background: #fff;
+    color: #77716a;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 20px;
+    }
+  }
+
+.back-link {
+  color: #51463d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
 }
 </style>

@@ -1,9 +1,13 @@
 <template>
   <main class="login-page">
-    <header class="login-header">
+    <header class="topbar">
       <RouterLink to="/" class="brand">
         <span class="brand-icon">H</span>
         <span>Hermes</span>
+      </RouterLink>
+
+      <RouterLink to="/" class="back-link">
+        Voltar
       </RouterLink>
     </header>
 
@@ -55,11 +59,11 @@
           <RouterLink to="/register">Cadastre-se</RouterLink>
         </p>
       </div>
-
-      <p class="login-footer">
-        Conhecimento é uma forma de proteção.
-      </p>
     </section>
+
+    <footer class="footer">
+      <p>{{ new Date().getFullYear() }} Hermes. Aprenda a navegar na internet com mais segurança.</p>
+    </footer>
   </main>
 </template>
 
@@ -112,10 +116,14 @@ async function login() {
   color: #302d29;
 }
 
-.login-header {
-  width: 100%;
-  padding: 26px 7%;
+.topbar {
+  min-height: 76px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid #ded8cf;
+  background: #fff;
 }
 
 .brand {
@@ -266,12 +274,31 @@ input:focus {
   text-underline-offset: 3px;
 }
 
-.login-footer {
-  margin-top: 28px;
-  color: #77716a;
-  text-align: center;
-  font-size: 12px;
-}
+.footer {
+    margin-top: auto;
+    padding: 24px 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border-top: 1px solid #ded8cf;
+    background: #fff;
+    color: #77716a;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 20px;
+    }
+  }
 
 @media (max-width: 480px) {
   .login-header {
@@ -285,5 +312,12 @@ input:focus {
   h1 {
     font-size: 25px;
   }
+}
+
+.back-link {
+  color: #51463d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
 }
 </style>

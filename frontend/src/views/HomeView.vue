@@ -292,17 +292,26 @@ function closeTutorial() {
 }
 
 .home-page .tutorial-link {
-  padding: 9px 14px;
-  border: 1px solid #ded8cf;
+  padding: 10px 16px;
+  border: 1px solid #51463d;
   border-radius: 8px;
-  background: #fffdf9;
-  color: #51463d;
+  background: #0f7522;
+  color: #ffffff;
   font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgb(48 45 41 / 12%);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .home-page .tutorial-link:hover {
-  background: #e8e1d8;
+  background: #1d982b;
+  box-shadow: 0 4px 9px rgb(48 45 41 / 18%);
+  transform: translateY(-1px);
+}
+
+.home-page .tutorial-link:focus-visible {
+  outline: 3px solid #b8ada1;
+  outline-offset: 3px;
 }
 </style>

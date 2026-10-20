@@ -9,7 +9,7 @@
 
       <nav class="desktop-nav">
         <RouterLink to="/" class="nav-active">Página inicial</RouterLink>
-        <a href="#sobre">Sobre</a>
+        <a href="/about">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
 
