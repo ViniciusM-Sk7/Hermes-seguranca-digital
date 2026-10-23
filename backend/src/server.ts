@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import path from "node:path";
 import cors from "cors";
 import { connectDatabase } from "./config/database";
 import userRoutes from "./routes/userRoutes";
@@ -38,5 +39,10 @@ async function startServer() {
     process.exit(1);
   }
 }
+
+app.use(
+  "/questions/images",
+  express.static(path.join(process.cwd(), "src/data/questions/images"))
+);
 
 startServer();

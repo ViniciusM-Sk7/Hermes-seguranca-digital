@@ -243,8 +243,10 @@
         "id":"phishing-022",
         "level": 2,
         "type": "true-false",
-        "question": "",
+        "question": "Teste",
         "correctAnswer": false,
-        "points": 10
+        "points": 10,
+        "image":"/questions/images/phishing-022.png",
+        "imageAlt":"Email, que diz ser de um funcionário do banco, pedindo informaçãoes pessoais"
     }
 ]

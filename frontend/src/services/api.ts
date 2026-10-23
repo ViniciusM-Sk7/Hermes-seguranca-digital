@@ -6,6 +6,10 @@ import type {
 
 const API_URL = "http://localhost:3000/api";
 
+export function getImageUrl(image: string): string {
+  return `${API_URL.replace(/\/api$/, "")}${image}`;
+}
+
 export async function apiRequest(
   endpoint: string,
   options: RequestInit = {}

@@ -42,6 +42,14 @@
           <h2>{{ currentQuestion.question }}</h2>
         </div>
 
+        <div v-if="currentQuestion.image" class="image-content">
+          <img
+            :src="getImageUrl(currentQuestion.image)"
+            :alt="currentQuestion.imageAlt || ''"
+            class="question-image"
+          />
+        </div>
+
         <div class="answers-content">
           <div v-if="currentQuestion.options">
             <button
@@ -218,6 +226,7 @@
   <script setup lang="ts">
   import { useRoute } from "vue-router";
   import { computed, ref } from "vue";
+  import { getImageUrl } from "../services/api";
 
   import {
     startAttempt,
@@ -496,263 +505,296 @@
     color: #302d29;
   }
 
+.question-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f3f0eb;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.question-content h2 {
+  align-self: stretch;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.answers-content {
+  min-width: 0;
+}
+
+.answers-content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answers-content button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+
+  border: 2px solid #ded8cf;
+  border-radius: 10px;
+
+  background: #f3f0eb;
+  color: #302d29;
+
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease,
+  border-color 0.2s ease;
+}
+
+.answers-content button:hover:not(:disabled) {
+  background: #e5ded4;
+}
+
+.answers-content button.correct {
+  background: #d1fae0;
+  border-color: #22a05a;
+  color: #166534;
+}
+
+.answers-content button.incorrect {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #991b1b;
+}
+
+.answers-content button:disabled {
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
+  }
+
   .question-content {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background: #f3f0eb;
-    border-radius: 12px;
-    min-width: 0;
+    padding: 16px;
   }
 
   .question-content h2 {
-    margin: 0;
-    font-size: 24px;
-    line-height: 1.5;
+    font-size: 20px;
   }
+}
 
-  .answers-content {
-    min-width: 0;
+.game-question{
+  background-color: #302d29;
+  color: #fee2e2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px;
   }
+}
 
-  .answers-content > div {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+.result-card {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid #ded8cf;
+  border-radius: 16px;
+  background: #fff;
+  color: #302d29;
+  box-shadow: 0 4px 12px rgba(48, 45, 41, 0.05);
+}
 
-  .answers-content button {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 14px 16px;
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 12px;
+}
 
-    border: 2px solid #ded8cf;
-    border-radius: 10px;
+.result-success {
+  background: #e7f6eb;
+  color: #21683a;
+}
 
-    background: #f3f0eb;
-    color: #302d29;
+.result-error {
+  background: #fcebea;
+  color: #a52c2c;
+}
 
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 0.2s ease,
-    border-color 0.2s ease;
-  }
+.result-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 26px;
+  font-weight: 700;
+}
 
-  .answers-content button:hover:not(:disabled) {
-    background: #e5ded4;
-  }
+.result-header h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+}
 
-  .answers-content button.correct {
-    background: #d1fae0;
-    border-color: #22a05a;
-    color: #166534;
-  }
+.result-header p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-  .answers-content button.incorrect {
-    background: #fee2e2;
-    border-color: #dc2626;
-    color: #991b1b;
-  }
+.result-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
 
-  .answers-content button:disabled {
-    cursor: default;
-  }
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid #ded8cf;
+  border-radius: 12px;
+  background: #faf9f7;
+}
 
-  @media (max-width: 600px) {
-    .game-card {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 16px;
-    }
+.stat-label {
+  color: #77716a;
+  font-size: 13px;
+}
 
-    .question-content {
-      padding: 16px;
-    }
+.result-stat strong {
+  font-size: 28px;
+  color: #51463d;
+}
 
-    .question-content h2 {
-      font-size: 20px;
-    }
-  }
+.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #51463d;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
 
-  .game-question{
-    background-color: #302d29;
-    color: #fee2e2;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: 32px 24px;
-    box-sizing: border-box;
-  }
+.next-button:hover {
+  background: #3d342d;
+}
 
-  @media (max-width: 600px) {
-    .game-card {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      padding: 20px;
-    }
-  }
-
+@media (max-width: 600px) {
   .result-card {
-    margin: 24px 0;
-    padding: 24px;
-    border: 1px solid #ded8cf;
-    border-radius: 16px;
-    background: #fff;
-    color: #302d29;
-    box-shadow: 0 4px 12px rgba(48, 45, 41, 0.05);
+    padding: 16px;
   }
 
   .result-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 18px;
-    border-radius: 12px;
-  }
-
-  .result-success {
-    background: #e7f6eb;
-    color: #21683a;
-  }
-
-  .result-error {
-    background: #fcebea;
-    color: #a52c2c;
-  }
-
-  .result-icon {
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
-    font-size: 26px;
-    font-weight: 700;
-  }
-
-  .result-header h2 {
-    margin: 0 0 5px;
-    font-size: 21px;
-  }
-
-  .result-header p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.5;
+    align-items: flex-start;
+    padding: 14px;
   }
 
   .result-stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin: 20px 0;
+    gap: 10px;
   }
 
   .result-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 18px;
-    border: 1px solid #ded8cf;
-    border-radius: 12px;
-    background: #faf9f7;
-  }
-
-  .stat-label {
-    color: #77716a;
-    font-size: 13px;
+    padding: 12px;
   }
 
   .result-stat strong {
-    font-size: 28px;
-    color: #51463d;
+    font-size: 24px;
   }
 
-  .next-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #51463d;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
+  .image-content {
+  padding: 10px;
+}
 
-  .next-button:hover {
-    background: #3d342d;
-  }
+.question-image {
+  max-height: 350px;
+}
+}
 
-  @media (max-width: 600px) {
-    .result-card {
-      padding: 16px;
-    }
+.start-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+}
 
-    .result-header {
-      align-items: flex-start;
-      padding: 14px;
-    }
+.start-button {
+  padding: 16px 36px;
+  border: none;
+  border-radius: 12px;
+  background: #2f6b4f;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
 
-    .result-stats {
-      gap: 10px;
-    }
+.start-button:hover:not(:disabled) {
+  background: #24563e;
+  transform: translateY(-2px);
+}
 
-    .result-stat {
-      padding: 12px;
-    }
+.start-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
-    .result-stat strong {
-      font-size: 24px;
-    }
-  }
+.error-message {
+  color: #dc2626;
+  text-align: center;
+  margin: 0;
+}
 
-  .start-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 24px;
-  }
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ded8cf;
+  border-radius: 12px;
+  min-width: 0;
+}
 
-  .start-button {
-    padding: 16px 36px;
-    border: none;
-    border-radius: 12px;
-    background: #2f6b4f;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-  }
-
-  .start-button:hover:not(:disabled) {
-    background: #24563e;
-    transform: translateY(-2px);
-  }
-
-  .start-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
-  .error-message {
-    color: #dc2626;
-    text-align: center;
-    margin: 0;
-  }
+.question-image {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  max-height: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
 
   </style>
