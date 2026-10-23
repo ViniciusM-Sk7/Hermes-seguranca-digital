@@ -242,11 +242,49 @@
     {
         "id":"phishing-022",
         "level": 2,
-        "type": "true-false",
-        "question": "Teste",
-        "correctAnswer": false,
-        "points": 10,
+        "type": "multiple-choice",
+        "question": "Você recebeu o e-mail apresentado, supostamente enviado pelo setor de segurança de um banco, solicitando seu CPF, número da conta e confirmação de acesso ao aplicativo, com a justificativa de evitar restrições à sua conta. Qual é a atitude mais segura a tomar?",
+        "options":[
+            "Responder ao e-mail com os dados solicitados, pois a mensagem foi enviada por um suposto funcionário do banco",
+            "Ignorar o pedido de dados, não responder à mensagem e entrar em contato com o banco por um canal oficial para verificar se existe algum problema",
+            "Enviar apenas o CPF e o número da conta, pois essas informações são suficientes para confirmar a identidade do cliente",
+            "Clicar em eventuais links enviados pelo remetente para verificar se a mensagem é legítima"
+        ],
+        "correctAnswer": 1,
+        "points": 20,
         "image":"/questions/images/phishing-022.png",
         "imageAlt":"Email, que diz ser de um funcionário do banco, pedindo informaçãoes pessoais"
+    },
+    {
+        "id":"phishing-023",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual é a atitude mais segura diante dessa mensagem?",
+        "options":[
+            "Acessar o link imediatamente para evitar que a encomenda seja devolvida",
+            "Responder à mensagem solicitando mais informações e enviar os dados pedidos se o remetente parecer confiável",
+            "Não acessar o link e verificar a situação da encomenda diretamente no site ou aplicativo oficial da transportadora, usando os dados do pedido",
+            "Efetuar o pagamento da taxa, pois cobranças adicionais são comuns em entregas"
+        ],
+        "correctAnswer": 2,
+        "points": 20,
+        "image":"/questions/images/phishing-023.png",
+        "imageAlt":"Mensagem de número desconhecido pedindo para regularizar cadastro e pagar taxa de entrega de uma encomenda"
+    },
+    {
+        "id":"phishing-024",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual é a atitude mais segura diante dessa mensagem?",
+        "options":[
+            "Enviar o código recebido por SMS, pois ele será usado para cancelar a compra suspeita",
+            "Informar apenas os últimos dígitos do cartão para confirmar a identidade antes de continuar",
+            "Continuar a conversa e pedir ao suposto funcionário que envie seu crachá para comprovar que trabalha no banco",
+            "Não compartilhar o código nem outros dados e entrar em contato com o banco pelos canais oficiais para verificar a compra"
+        ],
+        "correctAnswer": 3,
+        "points": 20,
+        "image":"/questions/images/phishing-024.png",
+        "imageAlt":"Mensagem de número desconhecido que diz ser funcionário de seu banco, a mensagem diz que houve uma compra realizada no seu cartão e pedem por um código para cancelar a transação."
     }
 ]
