@@ -286,5 +286,81 @@
         "points": 20,
         "image":"/questions/images/phishing-024.png",
         "imageAlt":"Mensagem de número desconhecido que diz ser funcionário de seu banco, a mensagem diz que houve uma compra realizada no seu cartão e pedem por um código para cancelar a transação."
-    }
+    },
+    {
+        "id":"phishing-025",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Você recebeu esse e-mail informando que sua conta poderá ser suspensa em 24 horas. Qual é a atitude mais segura?",
+        "options":[
+            "Clicar no botão e informar seu usuário e senha para comprovar que é o proprietário da conta",
+            "Responder ao e-mail solicitando que a equipe confirme sua identidade antes do bloqueio",
+            "Acessar a rede social pelo aplicativo ou endereço oficial, verificar se há algum alerta de segurança e ignorar o link recebido",
+            "Encaminhar o e-mail para amigos para descobrir se eles também receberam o mesmo aviso"
+       ],
+        "correctAnswer": 2,
+        "points": 30,
+        "image":"/questions/images/phishing-025.png",
+        "imageAlt":"Email dizendo ser suporte de uma rede social pedindo para entrar num link e entrar suas informações, mediante possibilidade de bloqueio de conta."
+    },
+    {
+        "id":"phishing-026",
+        "level": 3,
+        "type": "true-false",
+        "question": "Você recebe um e-mail informando que sua conta em uma rede social será bloqueada em 24 horas e solicitando que você clique em um link para confirmar sua senha. Como a mensagem apresenta o logotipo da rede social, é seguro clicar no link e informar seus dados.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"phishing-027",
+        "level": 3,
+        "type": "true-false",
+        "question": "Você recebe uma mensagem informando que ganhou um celular em um sorteio do qual não se lembra de ter participado. Para receber o prêmio, precisa clicar em um link e informar seu CPF e os dados do cartão. Essa situação pode ser uma tentativa de golpe.",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"phishing-028",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Você tenta acessar uma rede Wi-Fi gratuita em um shopping. Uma página aparece solicitando a senha do seu e-mail para liberar a conexão. O que deve fazer?",
+        "options":[
+            "Informar a senha, pois a página apareceu automaticamente após conectar à rede",
+            "Não fornecer a senha e verificar com o estabelecimento como acessar a rede com segurança",
+            "Usar a mesma senha de outra conta, para proteger seu e-mail principal",
+            "Informar a senha e ativar a autenticação em dois fatores depois"
+       ],
+        "correctAnswer": 1,
+        "points": 20
+    },
+    {
+        "id":"phishing-029",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Você recebe um e-mail dizendo que alguém solicitou a redefinição da senha da sua conta, mas não foi você. O que é mais seguro fazer?",
+        "options":[
+            "Acessar a conta pelo aplicativo ou site oficial e verificar a atividade e as opções de segurança",
+            "Ignorar qualquer sinal de acesso suspeito, pois provavelmente é um erro automático",
+            "Responder ao remetente com sua senha atual para comprovar sua identidade",
+            "Clicar imediatamente no link do e-mail para cancelar a solicitação"
+       ],
+        "correctAnswer": 0,
+        "points": 20
+    },
+    {
+        "id":"phishing-030",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Qual é a atitude mais segura nessa situação?",
+        "options":[
+            "Fazer o Pix imediatamente, pois a pessoa conhece você e afirma ser seu filho",
+            "Pedir uma foto do documento de identidade e fazer a transferência se o nome estiver correto",
+            "Confirmar a identidade por outro meio confiável, como ligar para o número antigo ou fazer uma chamada de voz ou vídeo, antes de enviar dinheiro",
+            "Pedir que a pessoa envie os dados bancários de um familiar para confirmar que conhece a família"
+       ],
+        "correctAnswer": 2,
+        "points": 20,
+        "image":"/questions/images/phishing-030.png",
+        "imageAlt":"Mensagem de número desconhecido afirmando ser seu filho e que mudou de número. Com mensagem pedindo para mandar um PIX imediatamente porque precisa de ajuda e depois irá explicar."
+    }       
 ]
