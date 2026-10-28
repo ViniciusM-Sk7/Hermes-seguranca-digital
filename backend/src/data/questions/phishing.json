@@ -362,5 +362,79 @@
         "points": 20,
         "image":"/questions/images/phishing-030.png",
         "imageAlt":"Mensagem de número desconhecido afirmando ser seu filho e que mudou de número. Com mensagem pedindo para mandar um PIX imediatamente porque precisa de ajuda e depois irá explicar."
-    }       
+    },
+    {
+        "id":"phishing-031",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "A mensagem contém informações pessoais corretas e parece vir do RH. Qual é a melhor atitude?",
+        "options":[
+            "Acessar o link, pois as informações pessoais corretas confirmam que o e-mail é legítimo",
+            "Não acessar o link e confirmar a solicitação com o RH por um canal corporativo conhecido, além de verificar o domínio do remetente",
+            "Responder ao e-mail perguntando se a solicitação é verdadeira e seguir as instruções caso respondam",
+            "Abrir o link em uma janela anônima para evitar que seus dados sejam roubados"
+       ],
+        "correctAnswer": 1,
+        "points": 40,
+        "image":"/questions/images/phishing-031.png",
+        "imageAlt":"Você recebe um e-mail aparentemente enviado pelo setor de RH da empresa onde trabalha. A mensagem menciona seu nome, o departamento em que você atua e informa que houve uma atualização no sistema de folha de pagamento."
+    },
+    {
+        "id":"phishing-032",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Um colega envia um e-mail com um link para um documento compartilhado. Você reconhece o nome dele e percebe que a mensagem está em uma conversa antiga e legítima. Porém, o texto é incomum e o link solicita que você entre novamente com sua conta corporativa. Qual é a atitude mais segura?",
+        "options":[
+            "Confirmar com o colega por outro canal e verificar o destino do link antes de acessá-lo",
+            "Encaminhar o link para outros colegas verificarem se funciona",
+            "Digitar uma senha antiga, já que a página solicita apenas uma nova autenticação",
+            "Abrir o link, pois a conversa original é legítima"
+       ],
+        "correctAnswer": 0,
+        "points": 30
+    },
+    {
+        "id":"phishing-033",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Você recebe uma mensagem supostamente enviada pela direção da empresa, com assinatura, cargo e logotipo corretos. Ela solicita que você consulte um relatório confidencial em um link externo. O endereço do remetente parece pertencer à empresa, mas, ao analisá-lo com atenção, você percebe uma letra diferente no domínio. Qual indício deve ter mais peso na sua decisão?",
+        "options":[
+            "A assinatura e o logotipo corretos confirmam a identidade do remetente",
+            "O cargo elevado do remetente indica que a solicitação deve ser atendida rapidamente",
+            "A diferença no domínio é um sinal de alerta; a solicitação deve ser verificada por um canal independente antes de abrir o link",
+            "O e-mail só seria suspeito se tivesse erros ortográficos"
+       ],
+        "correctAnswer": 2,
+        "points": 40
+    },
+    {
+        "id":"phishing-034",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Você recebe uma notificação de compartilhamento de arquivos de uma plataforma de nuvem que utiliza. O documento tem o nome de um projeto conhecido, mas você não esperava recebê-lo. Para visualizar o arquivo, a página solicita sua senha e, em seguida, um código de autenticação enviado ao celular. Qual é a melhor decisão?",
+        "options":[
+            "Inserir os dados, pois o código de autenticação impede qualquer fraude",
+            "Informar somente a senha, mas nunca o código recebidoe",
+            "Abrir o arquivo em outro navegador para evitar o roubo de credenciais.",
+            "Confirmar com o remetente por um canal confiável e acessar a plataforma diretamente, sem usar o link inesperado"
+       ],
+        "correctAnswer": 3,
+        "points": 30
+    },
+    {
+        "id":"phishing-035",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "O que você faria nessa situação?",
+        "options":[
+            "Informaria o código, pois o atendente precisa dele para cancelar a compra",
+            "Pediria o nome completo e o número de funcionário do atendente e, se ele respondesse, forneceria o código",
+            "Encerraria a ligação e entraria em contato com o banco pelo número oficial ou pelo aplicativo para verificar a transação",
+            "Informaria apenas os três primeiros dígitos do código para confirmar minha identidade"
+       ],
+        "correctAnswer": 2,
+        "points": 40,
+        "image":"/questions/images/phishing-035.png",
+        "imageAlt":"Simulação de uma ligação telefônica de um falso funcionário do banco que solicita um código de autenticação por SMS para cancelar uma compra suspeita."
+    }
 ]
