@@ -3,58 +3,102 @@
         "id":"golpes-digitais-001",
         "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste",
+        "question": "Você encontra um videogame anunciado nas redes sociais por um preço muito abaixo do praticado em outras lojas. O vendedor diz que há muitos interessados e exige pagamento antecipado via Pix. O que você deve fazer?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "Opção Pagar imediatamente para não perder a oportunidade",
+            "Verificar a reputação do vendedor, as condições da oferta e as garantias da plataforma antes de comprar",
+            "Enviar o pagamento e pedir o produto depois",
+            "Confiar porque o perfil possui várias fotos do produto"
         ],
-        "correctAnswer": 3,
+        "correctAnswer": 1,
         "points": 10
     },
     {
         "id":"golpes-digitais-002",
         "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste 2",
+        "question": "Você vende um produto pela internet. O comprador envia uma imagem de comprovante de Pix e pede que você entregue o produto imediatamente, mas o dinheiro ainda não aparece na sua conta. O que você deve fazer?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "Entregar o produto porque o comprovante parece verdadeiro",
+            "Confiar se o comprador mostrar uma captura de tela do banco",
+            "Confirmar o recebimento diretamente no aplicativo ou extrato bancário antes de entregar o produto",
+            "Entregar o produto se o comprador prometer que o dinheiro cairá depois"
         ],
-        "correctAnswer": 1,
-        "points": 20
+        "correctAnswer": 2,
+        "points": 10
     },
     {
         "id":"golpes-digitais-003",
         "level": 1,
         "type": "true-false",
-        "question": "Pergunta Teste 3",
-        "correctAnswer": true,
+        "question": "Se uma página informar que meu celular está infectado e exigir que eu ligue para um número imediatamente, devo seguir a orientação para proteger meus arquivos.",
+        "correctAnswer": false,
         "points": 10
     },
     {
         "id":"golpes-digitais-004",
-        "level": 2,
+        "level": 1,
         "type": "true-false",
-        "question": "Pergunta Teste 4",
-        "correctAnswer": false,
-        "points": 20
+        "question": "Antes de fazer uma doação para uma campanha divulgada nas redes sociais, é importante verificar se ela é legítima.",
+        "correctAnswer": true,
+        "points": 10
     },
     {
         "id":"golpes-digitais-005",
-        "level": 2,
+        "level": 1,
         "type": "multiple-choice",
-        "question": "Pergunta Teste 5",
+        "question": "Você encontra uma vaga de emprego pela internet. A pessoa responsável diz que você foi selecionado sem entrevista, mas precisa pagar por um curso obrigatório antes de começar. Qual é a melhor decisão?",
         "options": [
-            "Opção 1",
-            "Opção 2",
-            "Opção 3",
-            "Opção 4"
+            "Verificar a empresa e a vaga por canais oficiais e desconfiar da exigência de pagamento para garantir a contratação",
+            "Pagar, pois cursos são comuns em processos seletivos",
+            "Enviar seus documentos e pagar depois",
+            "Confiar porque a pessoa usa um e-mail com o nome da empresa"
+        ],
+        "correctAnswer": 0,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-006",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Durante a navegação, aparece um aviso dizendo que seu celular está infectado e que você deve ligar para um número indicado na tela para evitar perder seus arquivos. Qual é a atitude mais segura?",
+        "options": [
+            "Ligar imediatamente para o número informado.",
+            "Instalar o aplicativo indicado pelo aviso",
+            "Fechar a página e verificar a segurança do dispositivo usando recursos ou ferramentas confiáveis",
+            "Informar sua senha para que o suporte possa verificar o problema"
         ],
         "correctAnswer": 2,
         "points": 20
+    },
+    {
+        "id":"golpes-digitais-007",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Uma pessoa nas redes sociais promete dobrar seu dinheiro em poucos dias, garantindo que não existe risco e que você precisa investir imediatamente para aproveitar a oportunidade. Qual é o principal sinal de alerta?",
+        "options": [
+            "A pessoa publica vídeos sobre investimentos",
+            "O investimento pode ser feito pelo celular",
+            "A pessoa responde rapidamente às mensagens",
+            "A promessa de lucro garantido e rápido, acompanhada de pressão para investir"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-008",
+        "level": 1,
+        "type": "true-false",
+        "question": "Mesmo que o valor de um boleto esteja correto, é importante conferir o beneficiário antes de realizar o pagamento.",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"golpes-digitais-009",
+        "level": 1,
+        "type": "true-false",
+        "question": "Comprar fora de uma plataforma confiável é sempre seguro se o vendedor enviar fotos do produto.",
+        "correctAnswer": false,
+        "points": 10
     }
 ]
