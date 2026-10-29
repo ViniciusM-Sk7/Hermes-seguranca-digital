@@ -100,5 +100,209 @@
         "question": "Comprar fora de uma plataforma confiável é sempre seguro se o vendedor enviar fotos do produto.",
         "correctAnswer": false,
         "points": 10
+    },
+    {
+        "id":"golpes-digitais-010",
+        "level": 1,
+        "type": "true-false",
+        "question": "Se uma mensagem vier do perfil de um amigo, não existe risco de golpe, pois somente ele pode utilizar a conta.",
+        "correctAnswer": false,
+        "points": 10
+    },
+    {
+        "id":"golpes-digitais-011",
+        "level": 1,
+        "type": "true-false",
+        "question": "Um código recebido por SMS pode permitir que outra pessoa acesse uma conta ou autorize uma operação, por isso não deve ser compartilhado sem verificar sua finalidade.",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"golpes-digitais-012",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Após anunciar um produto em uma plataforma de vendas, você recebe uma mensagem de alguém que se apresenta como suporte e pede sua senha para liberar o pagamento. Como você deve agir?",
+        "options": [
+            "Informar a senha se a pessoa conhecer o número do pedido",
+            "Fornecer a senha temporariamente e trocá-la depois",
+            "Não compartilhar a senha e procurar o suporte dentro da plataforma oficial",
+            "Enviar a senha somente se a pessoa tiver uma foto de perfil profissional"
+        ],
+        "correctAnswer": 2,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-013",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Você encontra um imóvel para alugar por um preço muito abaixo do normal. O anunciante diz estar recebendo muitas propostas e pede um depósito para reservar o imóvel antes da visita. Qual é a atitude mais segura?",
+        "options": [
+            "Fazer o depósito para garantir a oportunidade",
+            "Enviar uma foto do documento para demonstrar interesse",
+            "Pagar metade do depósito para reduzir o risco",
+            "Verificar o anúncio, a identidade do anunciante e as condições do aluguel antes de pagar"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-014",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Um perfil em uma rede social utiliza o nome e o logotipo de uma loja conhecida e anuncia produtos com grandes descontos. O perfil pede que todos os pagamentos sejam feitos por Pix diretamente para uma pessoa física. Qual é a atitude mais segura?",
+        "options": [
+            "Comprar, pois o logotipo é igual ao da loja",
+            "Verificar se o perfil pertence à loja e confirmar a oferta nos canais oficiais antes de pagar",
+            "Fazer o Pix de metade do valor para testar o vendedor",
+            "Confiar se o perfil tiver muitos seguidores"
+        ],
+        "correctAnswer": 1,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-015",
+        "level": 1,
+        "type": "multiple-choice",
+        "question": "Uma pessoa oferece dinheiro para você curtir publicações e avaliar produtos pela internet. Depois de algumas tarefas simples, ela solicita um depósito para liberar uma comissão maior. O que você deve fazer?",
+        "options": [
+            "Desconfiar da proposta e não enviar dinheiro para liberar ganhos prometidos",
+            "Depositar o valor, pois você já recebeu uma comissão pequena",
+            "Pedir um desconto na taxa",
+            "Continuar até atingir o valor mínimo de saque"
+        ],
+        "correctAnswer": 0,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-016",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Uma pessoa que está comprando seu produto diz que precisa escanear um QR Code enviado por ela para liberar o pagamento. Ela insiste que esse é o procedimento normal da plataforma. Qual é a atitude mais segura?",
+        "options": [
+            "Escanear o código, pois ele foi enviado pelo comprador",
+            "Escanear o código e informar qualquer dado solicitado",
+            "Verificar o procedimento de pagamento na plataforma oficial e não seguir instruções externas sem confirmação",
+            "Pedir que o comprador envie outro QR Code com um valor menor"
+        ],
+        "correctAnswer": 2  ,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-017",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Você recebe uma ligação com a voz aparentemente idêntica à de um familiar. A pessoa diz que sofreu um acidente, está usando o telefone de outra pessoa e precisa de dinheiro imediatamente. O que você deve fazer?",
+        "options": [
+            "Enviar uma pequena quantia primeiro para confirmar que a pessoa recebeu",
+            "Pedir informações pessoais e transferir se as respostas estiverem corretas",
+            "Transferir o dinheiro porque reconhece a voz",
+            "Encerrar a ligação e tentar confirmar a situação diretamente com o familiar ou com alguém de confiança"
+        ],
+        "correctAnswer": 3,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-018",
+        "level": 2,
+        "type": "true-false",
+        "question": "Se uma ligação tiver a voz de um familiar e mencionar uma emergência, isso é suficiente para comprovar que a pessoa é realmente quem afirma ser.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-019",
+        "level": 2,
+        "type": "true-false",
+        "question": "Uma plataforma que exige um novo depósito para permitir o saque de um saldo supostamente acumulado pode estar aplicando um golpe.",
+        "correctAnswer": true,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-020",
+        "level": 2,
+        "type": "true-false",
+        "question": "Uma mensagem que contém seu nome, endereço ou informações de uma compra pode continuar sendo fraudulenta.",
+        "correctAnswer": true,
+        "points": 10
+    },
+    {
+        "id":"golpes-digitais-021",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Você está navegando pelas redes sociais e encontra este anúncio. O que você faria?",
+        "options":[
+            "Aproveitaria a promoção imediatamente, antes que o tempo acabasse",
+            "Pesquisaria a reputação da loja e compararia o preço em fontes confiáveis antes de comprar",
+            "Perguntaria ao vendedor se a oferta é verdadeira e compraria caso ele confirmasse",
+            "Compartilharia o anúncio com amigos para saber se alguém já comprou nessa loja e, enquanto isso, faria o Pix para garantir a oferta"
+       ],
+        "correctAnswer": 1,
+        "points": 30,
+        "image":"/questions/images/golpes-digitais-021.png",
+        "imageAlt":"Anúncio fictício de um smartphone por R$ 499,90, com preço original de R$ 2.499,90"
+    },
+    {
+        "id":"golpes-digitais-022",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "O que você faria nessa situação?",
+        "options":[
+            "Aproveitaria a promoção imediatamente, antes que o tempo acabasseVerificaria a legitimidade do sorteio nos canais oficiais da organização e não pagaria antes de confirmar a oferta",
+            "Pagaria a taxa de entrega, pois o valor é pequeno comparado ao prêmio",
+            "Responderia à mensagem solicitando um comprovante de que realmente ganhou o sorteio",
+            "Pagaria a taxa e aguardaria a entrega, já que a mensagem informa um prazo limitado"
+       ],
+        "correctAnswer": 0,
+        "points": 20,
+        "image":"/questions/images/golpes-digitais-022.png",
+        "imageAlt":"Simulação de uma mensagem no celular informando que o usuário ganhou um smartphone em um sorteio, mas precisa pagar uma taxa de entrega via Pix em até 10 minutos para receber o prêmio."
+    },
+    {
+        "id":"golpes-digitais-023",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "O que você faria nessa situação?",
+        "options":[
+            "Pagaria a taxa de cadastro, pois o valor é baixo em comparação com o dinheiro que posso ganhar",
+            "Pediria mais informações ao recrutador e aceitaria a vaga se ele enviasse um contrato de trabalho",
+            "Pesquisaria a empresa em fontes independentes e desconfiaria da cobrança antecipada para começar a trabalhar",
+            "Enviaria meus dados pessoais imediatamente para garantir a vaga antes que as oportunidades acabassem"
+       ],
+        "correctAnswer": 2,
+        "points": 30,
+        "image":"/questions/images/golpes-digitais-023.png",
+        "imageAlt":"Simulação de uma mensagem oferecendo trabalho remoto com ganhos de R$ 200 a R$ 500 por dia, sem experiência, mas exigindo uma taxa de cadastro de R$ 39,90 para começar."
+    },
+    {
+        "id":"golpes-digitais-024",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "O que você faria nessa situação?",
+        "options":[
+            "Pagaria a taxa de R$ 9,90, pois o valor é pequeno em comparação com as recompensas oferecidas",
+            "Forneceria os dados da minha conta para que a equipe pudesse adicionar as moedas e a skin",
+            "Perguntaria a outros jogadores se a promoção funciona e participaria caso alguém confirmasse que recebeu as recompensas",
+            "Verificaria se a promoção existe nos canais oficiais do jogo e não forneceria dinheiro nem acesso à minha conta"
+       ],
+        "correctAnswer": 3,
+        "points": 30,
+        "image":"/questions/images/golpes-digitais-024.png",
+        "imageAlt":"Simulação de uma postagem em rede social, sobre jogo online oferecendo 5.000 moedas virtuais e uma skin lendária em troca de uma taxa de ativação de R$ 9,90 ou dos dados da conta do jogador, com prazo de 10 minutos."
+    },
+    {
+        "id":"golpes-digitais-025",
+        "level": 2,
+        "type": "multiple-choice",
+        "question": "Qual seria a atitude mais segura?",
+        "options":[
+            "Comentar “EU QUERO” e aguardar o vendedor entrar em contato para negociar o pagamento",
+            "Pesquisar a loja em fontes independentes, verificar sua autenticidade e evitar pagar antes de confirmar que a oferta é legítima",
+            "Comprar imediatamente, pois a publicação tem muitas curtidas e comentários positivos",
+            "Enviar uma mensagem privada pedindo mais fotos do tênis e comprar se as imagens parecerem reais"
+       ],
+        "correctAnswer": 1,
+        "points": 30,
+        "image":"/questions/images/golpes-digitais-025.png",
+        "imageAlt":"Publicação fictícia de uma loja em rede social anunciando um tênis por R$ 199,90, em vez de R$ 699,90, com envio para todo o Brasil, desconto via Pix e prazo de cinco minutos para aproveitar a oferta."
     }
 ]
