@@ -304,5 +304,133 @@
         "points": 30,
         "image":"/questions/images/golpes-digitais-025.png",
         "imageAlt":"Publicação fictícia de uma loja em rede social anunciando um tênis por R$ 199,90, em vez de R$ 699,90, com envio para todo o Brasil, desconto via Pix e prazo de cinco minutos para aproveitar a oferta."
+    },
+    {
+        "id":"golpes-digitais-026",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Você teve sua conta bloqueada e encontrou essa publicação. Qual seria a atitude mais segura?",
+        "options":[
+            "Enviar o pagamento, pois o perfil possui muitos seguidores e comentários positivos",
+            "Enviar seus dados pessoais e informações da conta para que o suporte possa confirmar sua identidade",
+            "Pedir a um conhecido que já utilizou o serviço para confirmar se o suporte é confiável",
+            "Procurar os canais oficiais de atendimento da plataforma e verificar se existe algum procedimento legítimo para recuperar a conta"
+       ],
+        "correctAnswer": 3,
+        "points": 30,
+        "image":"/questions/images/golpes-digitais-026.png",
+        "imageAlt":"Publicação em uma rede social de um perfil chamado “Suporte Oficial”, oferecendo recuperação de contas bloqueadas mediante pagamento de R$ 35,00."
+    },
+    {
+        "id":"golpes-digitais-027",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Você encontra essa publicação e decide participar do sorteio. Qual atitude seria a mais segura?",
+        "options":[
+            "Pagar a taxa solicitada, pois o valor é baixo e o perfil parece popular",
+            "Participar normalmente, mas pagar somente depois de receber uma confirmação de que foi sorteado",
+            "Verificar se o sorteio foi anunciado nos canais oficiais da celebridade e desconfiar de cobranças para participar",
+            "Confiar nos comentários de outros usuários que afirmam ter participado de sorteios anteriores"
+       ],
+        "correctAnswer": 2,
+        "points": 30,
+        "image":"/questions/images/golpes-digitais-027.png",
+        "imageAlt":"Publicação fictícia em uma rede social de um perfil que imita uma celebridade, anunciando o sorteio de dez smartphones e cobrando uma taxa de cadastro de R$ 19,90."
+    },
+    {
+        "id":"golpes-digitais-028",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Você está interessado no ingresso e recebe uma imagem que parece mostrar um ingresso legítimo. Qual seria a atitude mais segura antes de realizar o pagamento?",
+        "options":[
+            "Realizar o Pix, pois a imagem do ingresso demonstra que o vendedor realmente possui uma unidade disponível",
+            "Verificar a autenticidade do ingresso e a possibilidade de transferência diretamente pelos canais oficiais do evento ou da plataforma de venda, evitando pagamentos sem garantia",
+            "Pedir uma foto do documento de identidade do vendedor e realizar o pagamento caso os dados pareçam verdadeiros",
+            "Consultar os comentários da publicação e realizar o pagamento caso outros usuários afirmem que o vendedor é confiável"
+       ],
+        "correctAnswer": 1,
+        "points": 30,
+        "image":"/questions/images/golpes-digitais-028.png",
+        "imageAlt":"Publicação fictícia de um perfil em rede social anunciando dois ingressos digitais para um show esgotado por R$ 180,00 cada, acompanhada de uma conversa em que o vendedor pressiona o comprador a pagar antecipadamente."
+    },
+    {
+        "id":"golpes-digitais-029",
+        "level": 3,
+        "type": "true-false",
+        "question": "Uma oferta de investimento não deixa de ser suspeita apenas porque outras pessoas publicam relatos de lucros e recomendam a mesma plataforma.",
+        "correctAnswer": true,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-030",
+        "level": 3,
+        "type": "true-false",
+        "question": "Em uma venda online, receber o dinheiro na conta antes de entregar o produto elimina completamente o risco de fraude para o vendedor.",
+        "correctAnswer": false,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-031",
+        "level": 3,
+        "type": "true-false",
+        "question": "Um golpista pode realizar pequenos pagamentos a uma vítima durante as primeiras etapas de uma falsa oportunidade de renda para conquistar sua confiança.",
+        "correctAnswer": true,
+        "points": 20
+    },
+    {
+        "id":"golpes-digitais-032",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Uma pessoa compra um item digital de outro usuário. O vendedor solicita que a negociação seja concluída fora do marketplace para evitar taxas. Em troca, oferece um desconto e apresenta avaliações positivas em seu perfil. Qual é o principal risco de aceitar a proposta?",
+        "options":[
+            "O item digital pode deixar de funcionar caso o comprador utilize uma forma de pagamento diferente da plataforma",
+            "A negociação pode perder mecanismos de registro, mediação e proteção oferecidos pelo marketplace em caso de disputa",
+            "O desconto pode alterar automaticamente a titularidade do item para o vendedor original",
+            "As avaliações positivas deixam de existir e são removidas do perfil assim que o pagamento é realizado"
+       ],
+        "correctAnswer": 1,
+        "points": 40
+    },
+    {
+        "id":"golpes-digitais-033",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Uma pessoa descobre que pagou por um produto anunciado por um perfil falso. O vendedor bloqueou o comprador e apagou as publicações. Qual conjunto de ações é mais adequado para tentar reduzir os prejuízos e preservar informações úteis?",
+        "options":[
+            "Apagar a conversa para evitar novos contatos e aguardar que a plataforma identifique o perfil",
+            "Publicar os dados pessoais do vendedor para alertar outras pessoas e tentar recuperar o dinheiro",
+            "Guardar conversas e comprovantes, comunicar imediatamente a instituição financeira e denunciar o perfil na plataforma",
+            "Pagar uma empresa que promete recuperar o dinheiro mediante uma taxa antecipada"
+       ],
+        "correctAnswer": 2,
+        "points": 40
+    },
+    {
+        "id":"golpes-digitais-034",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Um usuário recebe uma oferta de parceria de um perfil que utiliza o nome e a identidade visual de uma marca conhecida. O perfil pede uma taxa para liberar o cadastro de influenciadores e promete devolver o valor no primeiro pagamento. Qual sinal merece maior atenção?",
+        "options":[
+            "A proposta foi enviada por mensagem privada, em vez de uma publicação aberta",
+            "A marca possui produtos conhecidos e grande presença nas redes sociais",
+            "O perfil apresenta imagens de campanhas antigas da marca para demonstrar experiência",
+            "A proposta exige pagamento antecipado para liberar uma oportunidade de trabalho que deveria ser confirmada pela empresa"
+       ],
+        "correctAnswer": 3,
+        "points": 40
+    },
+    {
+        "id":"golpes-digitais-035",
+        "level": 3,
+        "type": "multiple-choice",
+        "question": "Durante uma negociação online, um intermediário conversa separadamente com comprador e vendedor. Ao comprador, informa uma chave Pix; ao vendedor, diz que o pagamento será feito por outra pessoa. O produto é entregue, mas o vendedor não recebe o dinheiro. Qual mecanismo explica melhor o golpe?",
+        "options":[
+            "O intermediário controla informações diferentes para cada parte e direciona o pagamento sem que elas percebam a divergência",
+            "O intermediário utiliza uma falha automática de compensação bancária para cancelar transferências concluídas",
+            "O vendedor perde o direito ao pagamento quando permite que outra pessoa participe da negociação",
+            "O comprador consegue cancelar qualquer Pix depois de receber o produto, independentemente das circunstâncias"
+       ],
+        "correctAnswer": 0,
+        "points": 40
     }
 ]
