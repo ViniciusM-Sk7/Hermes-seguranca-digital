@@ -4,7 +4,7 @@ import type {
   AttemptDetails
 } from "../types/study";
 
-const API_URL = "http://localhost:3000/api";
+const API_URL = "/api";
 
 export function getImageUrl(image: string): string {
   return `${API_URL.replace(/\/api$/, "")}${image}`;
