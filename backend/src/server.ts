@@ -45,4 +45,18 @@ app.use(
   express.static(path.join(process.cwd(), "src/data/questions/images"))
 );
 
+const frontendPath = path.resolve(process.cwd(), "../frontend/dist");
+
+app.use(express.static(frontendPath));
+
+app.use((req, res, next) => {
+  if (req.method !== "GET" || req.path.startsWith("/api/")) {
+    return next();
+  }
+
+  res.sendFile(path.join(frontendPath, "index.html"), (error) => {
+    if (error) next(error);
+  });
+});
+
 startServer();
